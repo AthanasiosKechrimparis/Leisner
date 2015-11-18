@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeisnerWebApplication", "Le
 		{CBDE772A-3F08-4846-8868-6452B586790C} = {CBDE772A-3F08-4846-8868-6452B586790C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWS-ASP", "..\..\..\Dropbox\Group Projects 3 Sem\Bed Wetting Project\Nicolaj og Johann\New solution\BWS-ASP\BWS-ASP\BWS-ASP.csproj", "{CBDE772A-3F08-4846-8868-6452B586790C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWS-ASP", "BWS-ASP\BWS-ASP.csproj", "{CBDE772A-3F08-4846-8868-6452B586790C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
