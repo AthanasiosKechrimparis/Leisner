@@ -75,6 +75,7 @@
     </None>
     <Content Include="StatisticsPage.aspx" />
     <Content Include="UserPage.aspx" />
+    <Content Include="ViewAccidents.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="UserPage.aspx.designer.cs">
       <DependentUpon>UserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAccidents.aspx.cs">
+      <DependentUpon>ViewAccidents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAccidents.aspx.designer.cs">
+      <DependentUpon>ViewAccidents.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
