@@ -13,5 +13,17 @@ namespace LeisnerWebApplication
         {
 
         }
+
+        protected void btn_Login_Click(object sender, EventArgs e)
+        {
+            if(txtb_Username.Text == "Admin" && txtb_Password.Text == "1234")
+            {
+                Response.Redirect("AdminPage.aspx");
+            }
+            else if(txtb_Username.Text == "User" && txtb_Password.Text == "1234")
+            {
+                Response.Redirect("UserPage.aspx");
+            }
+        }
     }
 }
