@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -61,6 +63,16 @@
     <Content Include="CreateUserPage.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="ManageAccidents.aspx" />
+    <None Include="Service References\LeisnerRef\BWSService.disco" />
+    <None Include="Service References\LeisnerRef\configuration91.svcinfo" />
+    <None Include="Service References\LeisnerRef\configuration.svcinfo" />
+    <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.AccidentDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\LeisnerRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="StatisticsPage.aspx" />
     <Content Include="UserPage.aspx" />
     <Content Include="Web.config" />
@@ -96,6 +108,11 @@
       <DependentUpon>ManageAccidents.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\LeisnerRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="StatisticsPage.aspx.cs">
       <DependentUpon>StatisticsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,12 +129,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\LeisnerRef\BWSService.wsdl" />
+    <None Include="Service References\LeisnerRef\BWSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LeisnerRef\BWSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LeisnerRef\BWSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LeisnerRef\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

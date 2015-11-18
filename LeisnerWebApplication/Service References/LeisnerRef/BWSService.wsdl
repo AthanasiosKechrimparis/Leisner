@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BWSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4264/BWSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4264/BWSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4264/BWSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BWS_ASP" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBWSService_Dowork_InputMessage">
+    <wsdl:part name="parameters" element="tns:Dowork" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_Dowork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_RegisterAccident_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterAccident" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_RegisterAccident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterAccidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_GetSatisticBasedOnUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSatisticBasedOnUser" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_GetSatisticBasedOnUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSatisticBasedOnUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_logIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:logIn" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_logIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:logInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_RegisterDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDevice" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_RegisterDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_UpdateAccident_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccident" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_UpdateAccident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_DeleteAccidents_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccidents" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_DeleteAccidents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccidentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_SignUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignUp" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_SignUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_ReadAccidents_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAccidents" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_ReadAccidents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadAccidentsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBWSService">
+    <wsdl:operation name="Dowork">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/Dowork" message="tns:IBWSService_Dowork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/DoworkResponse" message="tns:IBWSService_Dowork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterAccident">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/RegisterAccident" message="tns:IBWSService_RegisterAccident_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/RegisterAccidentResponse" message="tns:IBWSService_RegisterAccident_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSatisticBasedOnUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/GetSatisticBasedOnUser" message="tns:IBWSService_GetSatisticBasedOnUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/GetSatisticBasedOnUserResponse" message="tns:IBWSService_GetSatisticBasedOnUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="logIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/logIn" message="tns:IBWSService_logIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/logInResponse" message="tns:IBWSService_logIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/RegisterDevice" message="tns:IBWSService_RegisterDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/RegisterDeviceResponse" message="tns:IBWSService_RegisterDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccident">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/UpdateAccident" message="tns:IBWSService_UpdateAccident_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/UpdateAccidentResponse" message="tns:IBWSService_UpdateAccident_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccidents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/DeleteAccidents" message="tns:IBWSService_DeleteAccidents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/DeleteAccidentsResponse" message="tns:IBWSService_DeleteAccidents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/SignUp" message="tns:IBWSService_SignUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/SignUpResponse" message="tns:IBWSService_SignUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadAccidents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/ReadAccidents" message="tns:IBWSService_ReadAccidents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/ReadAccidentsResponse" message="tns:IBWSService_ReadAccidents_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBWSService" type="tns:IBWSService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Dowork">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/Dowork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterAccident">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/RegisterAccident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSatisticBasedOnUser">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/GetSatisticBasedOnUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logIn">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/logIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDevice">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/RegisterDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccident">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/UpdateAccident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccidents">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/DeleteAccidents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUp">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/SignUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadAccidents">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/ReadAccidents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BWSService">
+    <wsdl:port name="BasicHttpBinding_IBWSService" binding="tns:BasicHttpBinding_IBWSService">
+      <soap:address location="http://localhost:4264/BWSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4b13ddb2-7ae9-41a8-b8af-a9df09053d3b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4264/BWSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BWSService.xsd" MetadataType="Schema" ID="5b11d004-2b7a-4e4d-9669-2e331f496291" SourceId="1" SourceUrl="http://localhost:4264/BWSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BWSService1.xsd" MetadataType="Schema" ID="1ca31368-2c94-4ab6-83a5-651ce20f1a21" SourceId="1" SourceUrl="http://localhost:4264/BWSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BWSService.wsdl" MetadataType="Wsdl" ID="3a601a09-9a1c-4254-903c-a3be94b819d7" SourceId="1" SourceUrl="http://localhost:4264/BWSService.svc?wsdl" />
+    <MetadataFile FileName="BWSService.disco" MetadataType="Disco" ID="935ca727-b2da-4e68-8de5-8c6445ba2c52" SourceId="1" SourceUrl="http://localhost:4264/BWSService.svc?disco" />
+    <MetadataFile FileName="BWSService2.xsd" MetadataType="Schema" ID="1ed87926-0647-4be7-90de-efedd57216d7" SourceId="1" SourceUrl="http://localhost:4264/BWSService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
