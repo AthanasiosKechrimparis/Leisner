@@ -13,5 +13,20 @@ namespace LeisnerWebApplication
         {
 
         }
+
+        protected void btn_ManageAcc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageAccidents.aspx");
+        }
+
+        protected void btn_Statistics_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StatisticsPage.aspx");
+        }
+
+        protected void btn_CreateUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateUserPage.aspx");
+        }
     }
 }

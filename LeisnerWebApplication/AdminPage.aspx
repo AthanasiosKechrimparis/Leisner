@@ -10,6 +10,30 @@
     <form id="form1" runat="server">
     <div>
     
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <asp:Button ID="btn_ManageAcc" runat="server" OnClick="btn_ManageAcc_Click" Text="Manage Accidents" />
+                </td>
+                <td>
+                    <asp:Button ID="btn_Statistics" runat="server" OnClick="btn_Statistics_Click" Text="Statistics" />
+                </td>
+                <td>
+                    <asp:Button ID="btn_CreateUser" runat="server" OnClick="btn_CreateUser_Click" Text="Create User" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    
     </div>
     </form>
 </body>

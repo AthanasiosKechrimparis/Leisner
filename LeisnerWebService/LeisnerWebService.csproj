@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{379BF524-C4D0-4A7E-8BAE-951C2CAB6AF0}</ProjectGuid>
+    <ProjectGuid>{E6B65EF4-2D12-469E-BD74-A10F03DA8097}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LeisnerWebApplication</RootNamespace>
-    <AssemblyName>LeisnerWebApplication</AssemblyName>
+    <RootNamespace>LeisnerWebService</RootNamespace>
+    <AssemblyName>LeisnerWebService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,66 +57,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdminPage.aspx" />
-    <Content Include="CreateUserPage.aspx" />
-    <Content Include="MainPage.aspx" />
-    <Content Include="ManageAccidents.aspx" />
-    <Content Include="StatisticsPage.aspx" />
-    <Content Include="UserPage.aspx" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AdminPage.aspx.cs">
-      <DependentUpon>AdminPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminPage.aspx.designer.cs">
-      <DependentUpon>AdminPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateUserPage.aspx.cs">
-      <DependentUpon>CreateUserPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateUserPage.aspx.designer.cs">
-      <DependentUpon>CreateUserPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.aspx.cs">
-      <DependentUpon>MainPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MainPage.aspx.designer.cs">
-      <DependentUpon>MainPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ManageAccidents.aspx.cs">
-      <DependentUpon>ManageAccidents.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageAccidents.aspx.designer.cs">
-      <DependentUpon>ManageAccidents.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StatisticsPage.aspx.cs">
-      <DependentUpon>StatisticsPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StatisticsPage.aspx.designer.cs">
-      <DependentUpon>StatisticsPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserPage.aspx.cs">
-      <DependentUpon>UserPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UserPage.aspx.designer.cs">
-      <DependentUpon>UserPage.aspx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -131,9 +83,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>32886</DevelopmentServerPort>
+          <DevelopmentServerPort>64798</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:32886/</IISUrl>
+          <IISUrl>http://localhost:64798/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
