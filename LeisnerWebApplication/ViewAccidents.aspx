@@ -37,17 +37,21 @@
             </LayoutTemplate>
                <ItemTemplate>
                 <tr style="">
-                    <td>
+                   <td>
                         <asp:LinkButton ID="lnkSelect" Text="Select" CommandName="Select" runat="server" />
                     </td>
                     <td>
-                        <asp:Label ID="DeviceNrLabel" runat="server" Text='<%# Eval("deviceID") %>' />
+                        <asp:Label ID="AccidentIDLabel" runat="server" Text='<%# Eval("AccidentID") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="DateLabel" runat="server" Text='<%# Eval("timeofAccident") %>' />
+                        <asp:Label ID="DateLabel" runat="server" Text='<%# Eval("Date") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="AmountLabel" runat="server" Text='<%# Eval("amount") %>' />
+                        <asp:Label ID="AmountLabel" runat="server" Text='<%# Eval("Amount") %>' />
+
+                    </td>
+                    <td>
+                        <asp:Label ID="DeviceIDLabel" runat="server" Text='<%# Eval("DeviceID") %>' />
                     </td>
                 </tr>
             </ItemTemplate>

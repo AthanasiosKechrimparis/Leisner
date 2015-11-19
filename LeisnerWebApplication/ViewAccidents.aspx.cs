@@ -26,9 +26,25 @@ namespace LeisnerWebApplication
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            bedW.ReadAccidents(int.Parse(IDBox.Text));
-            //ListView1.DataSource = listofAccidents;
-            //ListView1.DataBind();
+            //bedW.ReadAccidents(int.Parse(IDBox.Text));
+            Accident acc;
+            List<Accident> accList = new List<Accident>();
+
+            LeisnerRef.AccidentDTO[] L1 = bedW.ReadAccidents(int.Parse(IDBox.Text));
+
+            List<LeisnerRef.AccidentDTO> listOfAccidents = L1.ToList();
+
+            foreach (AccidentDTO aDTO in listOfAccidents)
+            {
+                acc = new Accident(aDTO.AccidentIDk__BackingField, aDTO.DeviceIDk__BackingField, aDTO.Datek__BackingField, aDTO.Amountk__BackingField);
+
+                accList.Add(acc);
+            }
+
+
+
+            ListView1.DataSource = accList;
+            ListView1.DataBind();
         }
 
         protected void IDBox_TextChanged(object sender, EventArgs e)

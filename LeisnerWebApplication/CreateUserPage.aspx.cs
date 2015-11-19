@@ -75,10 +75,12 @@ namespace LeisnerWebApplication
             if (DropDownList1.SelectedIndex.Equals(1))
             {
                 txtb_Device.Enabled = false;
+                txtb_Birthday.Enabled = false;
             }
             if (DropDownList1.SelectedIndex.Equals(0))
             {
                 txtb_Device.Enabled = true;
+                txtb_Birthday.Enabled = true;
             }
         }
     }
