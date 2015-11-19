@@ -7,15 +7,18 @@ namespace LeisnerWebApplication
 {
     public class Accident
     {
-        public int deviceID { get; set; }
-        public DateTime timeofAccident { get; set; }
-        public int  amount { get; set; }
+        public int DeviceID { get; set; }
+        public DateTime Date { get; set; }
+        public int  Amount { get; set; }
 
-        public Accident (int d, DateTime t, int a)
+        public int AccidentID { get; set; }
+
+        public Accident (int acc, int d, DateTime t, int a)
         {
-            deviceID = d;
-            timeofAccident = t;
-            amount = a;
+            DeviceID = d;
+            Date = t;
+            Amount = a;
+            AccidentID = acc;
         }
     }
 }

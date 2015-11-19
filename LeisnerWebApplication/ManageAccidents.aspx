@@ -18,18 +18,20 @@
         <table style="width:auto" border="1";>
             <tr>
                 <td class="auto-style3" >
-    <asp:ListView ID="ListView1" runat="server" DataKeyNames="DeviceID" OnSelectedIndexChanged="ListView1_SelectedIndexChanged"
-            OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
+    <asp:ListView ID="ListView1" runat="server" DataKeyNames="AccidentID" OnSelectedIndexChanged="ListView1_SelectedIndexChanged"
+            OnSelectedIndexChanging="ListView1_SelectedIndexChanging" >
             <LayoutTemplate>
                 <table id="itemPlaceholderContainer" runat="server" border="1">
                     <tr id="Tr1" runat="server">
                         <th>Select
                         </th>
-                        <th id="Th1" runat="server">DeviceNr
+                        <th id="Th1" runat="server">AccidentID
                         </th>
                         <th id="Th2" runat="server">Date
                         </th>
                         <th id="Th3" runat="server">Amount
+                        </th>
+                        <th id="Th4" runat="server">DeviceID
                         </th>
                     </tr>
                     <tr id="itemPlaceholder" runat="server">
@@ -42,20 +44,24 @@
                         <asp:LinkButton ID="lnkSelect" Text="Select" CommandName="Select" runat="server" />
                     </td>
                     <td>
-                        <asp:Label ID="DeviceNrLabel" runat="server" Text='<%# Eval("deviceID") %>' />
+                        <asp:Label ID="AccidentIDLabel" runat="server" Text='<%# Eval("AccidentID") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="DateLabel" runat="server" Text='<%# Eval("timeofAccident") %>' />
+                        <asp:Label ID="DateLabel" runat="server" Text='<%# Eval("Date") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="AmountLabel" runat="server" Text='<%# Eval("amount") %>' />
+                        <asp:Label ID="AmountLabel" runat="server" Text='<%# Eval("Amount") %>' />
+
+                    </td>
+                    <td>
+                        <asp:Label ID="DeviceIDLabel" runat="server" Text='<%# Eval("DeviceID") %>' />
                     </td>
                 </tr>
             </ItemTemplate>
         </asp:ListView>
                 </td>
                 <td aria-multiline="False">
-                    <asp:Button ID="btn_GetAccidents" runat="server" Text="Get Accidents" />
+                    <asp:Button ID="btn_GetAccidents" runat="server" Text="Get Accidents" OnClick="btn_GetAccidents_Click" />
                     <br />
                     <asp:Label ID="Label6" runat="server" Text="UserID"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -66,25 +72,29 @@
                     <br />
                     <asp:Button ID="btn_DeleteAccident" runat="server" Text="Delete Accident" />
                     <br />
-        <asp:Button ID="btn_Update" runat="server" Text="Update Accident" />
+        <asp:Button ID="btn_Update" runat="server" Text="Update Accident" OnClick="btn_Update_Click" />
+                    
+                    <br />
+                    <asp:Label ID="Label8" runat="server" Text="AccidentID"></asp:Label>
+                    <asp:TextBox ID="txtb_AccidentID" runat="server"></asp:TextBox>
                     
                 </td>
                 
             </tr>
             <tr>
                 <td class="auto-style3"> <br />
-                    <asp:RadioButton ID="rBtn_DeviceID" runat="server" GroupName="UpdatePage" />
+                    <asp:RadioButton ID="rBtn_DeviceID" runat="server" AutoPostBack="True" GroupName="UpdatePage" OnCheckedChanged="rBtn_DeviceID_CheckedChanged" />
         <asp:Label ID="Label1" runat="server" Text="DeviceID"></asp:Label>
         <asp:TextBox ID="txtb_DeviceID" runat="server"></asp:TextBox>
         <br />
-                     <asp:RadioButton ID="rBtn_Amount" runat="server" GroupName="UpdatePage" />
+                     <asp:RadioButton ID="rBtn_Amount" runat="server" AutoPostBack="True" GroupName="UpdatePage" OnCheckedChanged="rBtn_Amount_CheckedChanged" />
                      <asp:Label ID="Label3" runat="server" Text="Amount"></asp:Label>
 &nbsp;
         <asp:TextBox ID="txtb_Amount" runat="server"></asp:TextBox>
         <br />
                 </td>
                 <td>
-                    <asp:RadioButton ID="rBtn_Date" runat="server" GroupName="UpdatePage" />
+                    <asp:RadioButton ID="rBtn_Date" runat="server" AutoPostBack="True" GroupName="UpdatePage" OnCheckedChanged="rBtn_Date_CheckedChanged" />
        
         <asp:Label ID="Label2" runat="server" Text="Date"></asp:Label>
                     <asp:TextBox ID="txtb_Date" runat="server"></asp:TextBox>
