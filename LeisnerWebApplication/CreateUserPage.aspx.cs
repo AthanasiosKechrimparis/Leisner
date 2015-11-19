@@ -66,7 +66,7 @@ namespace LeisnerWebApplication
                 deviceID = int.Parse(txtb_Device.Text);
             }
 
-           // bedW.SignUp(DropDownList1.SelectedIndex.ToString(), birthday, txtb_Username.Text, txtb_Password.Text, txtb_Name.Text, deviceID);
+            bedW.SignUp(DropDownList1.SelectedIndex.ToString(), birthday, txtb_Username.Text, txtb_Password.Text, txtb_Name.Text, deviceID);
             
         }
 
