@@ -18,10 +18,12 @@ namespace LeisnerWebApplication
         {
             if(txtb_Username.Text == "Admin" && txtb_Password.Text == "1234")
             {
+                Session.Add("Admin", "YES");
                 Response.Redirect("AdminPage.aspx");
             }
             else if(txtb_Username.Text == "User" && txtb_Password.Text == "1234")
             {
+                Session.Add("Admin", "NO");
                 Response.Redirect("UserPage.aspx");
             }
         }
