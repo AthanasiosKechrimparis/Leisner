@@ -57,7 +57,12 @@
                 <td aria-multiline="False">
                     <asp:Button ID="btn_GetAccidents" runat="server" Text="Get Accidents" />
                     <br />
+                    <asp:Label ID="Label6" runat="server" Text="UserID"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="txtb_UserID" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:Label ID="Label7" runat="server" Text="Choose Date"></asp:Label>
+                    <asp:TextBox ID="txtb_AccidentDate" runat="server"></asp:TextBox>
                     <br />
                     <asp:Button ID="btn_DeleteAccident" runat="server" Text="Delete Accident" />
                     <br />
@@ -82,6 +87,15 @@
                     <asp:RadioButton ID="rBtn_Date" runat="server" GroupName="UpdatePage" />
        
         <asp:Label ID="Label2" runat="server" Text="Date"></asp:Label>
+                    <asp:TextBox ID="txtb_Date" runat="server"></asp:TextBox>
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label4" runat="server" Text="Hour"></asp:Label>
+                    <asp:TextBox ID="txtb_Hour" runat="server"></asp:TextBox>
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label5" runat="server" Text="Minute"></asp:Label>
+                    <asp:TextBox ID="txtb_Minute" runat="server"></asp:TextBox>
                 </td>
                 
             </tr>
