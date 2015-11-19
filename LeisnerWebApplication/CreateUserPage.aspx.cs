@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeisnerWebApplication.LeisnerRef;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,7 +27,8 @@ namespace LeisnerWebApplication
 
     public partial class CreateUserPage : System.Web.UI.Page
     {
-        int i = 0;
+        BWSServiceClient bedW = new BWSServiceClient();
+        
         List<User> listofUser = new List<User>();
         List<string> type = new List<string>();
 
@@ -53,8 +55,19 @@ namespace LeisnerWebApplication
 
         protected void btn_Create_Click(object sender, EventArgs e)
         {
-            User newUser = new User(txtb_Name.Text, txtb_Username.Text, txtb_Password.Text, int.Parse(txtb_Device.Text));
-            listofUser.Add(newUser);
+            string birthday = "";
+            int deviceID = 0;
+            if (txtb_Birthday.Text != "")
+            {
+                birthday = txtb_Birthday.Text;
+            }
+            if (txtb_Device.Text != "")
+            {
+                deviceID = int.Parse(txtb_Device.Text);
+            }
+
+           // bedW.SignUp(DropDownList1.SelectedIndex.ToString(), birthday, txtb_Username.Text, txtb_Password.Text, txtb_Name.Text, deviceID);
+            
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)

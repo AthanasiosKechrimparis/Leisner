@@ -99,10 +99,10 @@ namespace BWS_ASP
             admin.DeleteAccidents(AccidentID);
         }
 
-        public void SignUp(string UserName, string PassWord, int Permision, string Name, int Age)
+        public void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID)
         {
             Log = new LogIn();
-            Log.SignUp(UserName, PassWord, Permision, Name, Age);
+            Log.SignUp(type, birthday, UserName, PassWord, Name, deviceID);
         }
 
         public List<AccidentDTO> ReadAccidents(int UserID)
