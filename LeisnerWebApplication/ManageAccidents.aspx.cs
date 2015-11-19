@@ -75,7 +75,11 @@ namespace LeisnerWebApplication
 
         protected void btn_Update_Click(object sender, EventArgs e)
         {
-            //txtb_Amount.Enabled = true;
+            DateTime date = DateTime.Parse(txtb_Date.Text);
+
+            cli.UpdateAccident(int.Parse(txtb_AccidentID.Text), int.Parse(txtb_Amount.Text), date, int.Parse(txtb_DeviceID.Text));
+
+            
         }
 
         protected void rBtn_DeviceID_CheckedChanged(object sender, EventArgs e)
@@ -110,6 +114,16 @@ namespace LeisnerWebApplication
         protected void SelectAccident(object sender, EventArgs e)
         {
             txtb_AccidentID.Text = (sender as LinkButton).CommandArgument.ToString();
+
+            foreach (Accident a in listofAccidents)
+            {
+                if (a.AccidentID == int.Parse((sender as LinkButton).CommandArgument))
+                {
+                    txtb_Amount.Text = a.Amount.ToString();
+                    txtb_DeviceID.Text = a.DeviceID.ToString();
+                    txtb_Date.Text = a.Date.ToString();
+                }
+            }
         }
     }
 }
