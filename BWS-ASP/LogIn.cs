@@ -54,7 +54,7 @@ namespace BWS_ASP
         }
 
 
-        public void SignUp(string UserName, string PassWord, int Permision, string Name, int Age)
+        public void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID)
         {
             Transaction trans;
             SqlCommand cmd;
@@ -67,11 +67,13 @@ namespace BWS_ASP
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.Add(new SqlParameter("@type", type));
+                cmd.Parameters.Add(new SqlParameter("@birthday", birthday));
                 cmd.Parameters.Add(new SqlParameter("@UserName", UserName));
                 cmd.Parameters.Add(new SqlParameter("@PassWord", PassWord));
-                cmd.Parameters.Add(new SqlParameter("@Permision", Permision));
                 cmd.Parameters.Add(new SqlParameter("@Name", Name));
-                cmd.Parameters.Add(new SqlParameter("@Age", Age));
+                cmd.Parameters.Add(new SqlParameter("@deviceID", deviceID));
+
 
                 cmd.ExecuteNonQuery();
             }

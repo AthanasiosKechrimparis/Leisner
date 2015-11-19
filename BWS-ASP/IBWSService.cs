@@ -43,7 +43,7 @@ namespace BWS_ASP
         void DeleteAccidents(int AccidentID);
 
         [OperationContract]
-        void SignUp(string UserName, string PassWord, int Permision, string Name, int Age);
+        void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID);
 
         [OperationContract]
         List<AccidentDTO> ReadAccidents(int UserID);
