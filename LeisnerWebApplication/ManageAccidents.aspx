@@ -5,14 +5,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style3 {
+            width: 400px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
+        <table style="width:auto" border="1";>
+            <tr>
+                <td class="auto-style3" >
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="DeviceID" OnSelectedIndexChanged="ListView1_SelectedIndexChanged"
             OnSelectedIndexChanging="ListView1_SelectedIndexChanging">
             <LayoutTemplate>
-                <table id="itemPlaceholderContainer" runat="server" >
+                <table id="itemPlaceholderContainer" runat="server" border="1">
                     <tr id="Tr1" runat="server">
                         <th>Select
                         </th>
@@ -44,20 +53,59 @@
                 </tr>
             </ItemTemplate>
         </asp:ListView>
-        <br />
+                </td>
+                <td aria-multiline="False">
+                    <asp:Button ID="btn_GetAccidents" runat="server" Text="Get Accidents" />
+                    <br />
+                    <asp:Label ID="Label6" runat="server" Text="UserID"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:TextBox ID="txtb_UserID" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:Label ID="Label7" runat="server" Text="Choose Date"></asp:Label>
+                    <asp:TextBox ID="txtb_AccidentDate" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:Button ID="btn_DeleteAccident" runat="server" Text="Delete Accident" />
+                    <br />
+        <asp:Button ID="btn_Update" runat="server" Text="Update Accident" />
+                    
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="auto-style3"> <br />
+                    <asp:RadioButton ID="rBtn_DeviceID" runat="server" GroupName="UpdatePage" />
         <asp:Label ID="Label1" runat="server" Text="DeviceID"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtb_DeviceID" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Date"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label3" runat="server" Text="Amount"></asp:Label>
+                     <asp:RadioButton ID="rBtn_Amount" runat="server" GroupName="UpdatePage" />
+                     <asp:Label ID="Label3" runat="server" Text="Amount"></asp:Label>
 &nbsp;
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtb_Amount" runat="server"></asp:TextBox>
         <br />
+                </td>
+                <td>
+                    <asp:RadioButton ID="rBtn_Date" runat="server" GroupName="UpdatePage" />
+       
+        <asp:Label ID="Label2" runat="server" Text="Date"></asp:Label>
+                    <asp:TextBox ID="txtb_Date" runat="server"></asp:TextBox>
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label4" runat="server" Text="Hour"></asp:Label>
+                    <asp:TextBox ID="txtb_Hour" runat="server"></asp:TextBox>
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label5" runat="server" Text="Minute"></asp:Label>
+                    <asp:TextBox ID="txtb_Minute" runat="server"></asp:TextBox>
+                </td>
+                
+            </tr>
+            
+        </table>
+       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Update" />
+       
+        <br />
         <br />
     </div>
     </form>
