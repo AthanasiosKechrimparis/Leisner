@@ -10,6 +10,7 @@ namespace LeisnerWebApplication
     class User
     {
         public string  name { get; set; }
+        public string Type { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public int devicenr { get; set; }
@@ -25,11 +26,24 @@ namespace LeisnerWebApplication
 
     public partial class CreateUserPage : System.Web.UI.Page
     {
-        
+        int i = 0;
         List<User> listofUser = new List<User>();
+        List<string> type = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)    // First time the page is loaded
+            {
+                LoadDropDownList();
+            }
+           
+        }
+        public void LoadDropDownList()
+        {
+            type.Add("User");
+            type.Add("Admin");
+            DropDownList1.DataSource = type;
+            DropDownList1.DataBind();
         }
 
         protected void TextBox4_TextChanged(object sender, EventArgs e)
@@ -41,6 +55,18 @@ namespace LeisnerWebApplication
         {
             User newUser = new User(txtb_Name.Text, txtb_Username.Text, txtb_Password.Text, int.Parse(txtb_Device.Text));
             listofUser.Add(newUser);
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownList1.SelectedIndex.Equals(1))
+            {
+                txtb_Device.Enabled = false;
+            }
+            if (DropDownList1.SelectedIndex.Equals(0))
+            {
+                txtb_Device.Enabled = true;
+            }
         }
     }
 }
