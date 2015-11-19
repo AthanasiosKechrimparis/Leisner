@@ -12,20 +12,21 @@ namespace LeisnerWebApplication
     {
         List<Accident> listofAccidents;
         BWSServiceClient cli = new BWSServiceClient();
+        List<Accident> accList;
         protected void Page_Load(object sender, EventArgs e)
         {
-            listofAccidents = new List<Accident>();
+            //listofAccidents = new List<Accident>();
 
-            Accident a1 = new Accident(1, 123, new DateTime(2015, 10, 10), 5);
-            Accident a2 = new Accident(2, 456, new DateTime(2015, 4, 8), 10);
-            Accident a3 = new Accident(3, 678, new DateTime(2015, 10, 1), 15);
+            //Accident a1 = new Accident(1, 123, new DateTime(2015, 10, 10), 5);
+            //Accident a2 = new Accident(2, 456, new DateTime(2015, 4, 8), 10);
+            //Accident a3 = new Accident(3, 678, new DateTime(2015, 10, 1), 15);
 
-            listofAccidents.Add(a1);
-            listofAccidents.Add(a2);
-            listofAccidents.Add(a3);
+            //listofAccidents.Add(a1);
+            //listofAccidents.Add(a2);
+            //listofAccidents.Add(a3);
 
-            ListView1.DataSource = listofAccidents;
-            ListView1.DataBind();
+            //ListView1.DataSource = listofAccidents;
+            //ListView1.DataBind();
             if (!IsPostBack)
             {
                 txtb_Amount.Enabled = false;
@@ -35,6 +36,8 @@ namespace LeisnerWebApplication
                 txtb_Minute.Enabled = false;
                 txtb_AccidentID.Enabled = false;
             }
+
+            //GetAccidents();
         }
 
         protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,10 +54,15 @@ namespace LeisnerWebApplication
 
         protected void btn_GetAccidents_Click(object sender, EventArgs e)
         {
+            GetAccidents();
+        }
+
+        private void GetAccidents()
+        {
             int userID = int.Parse(txtb_UserID.Text);
 
             Accident acc;
-            List<Accident> accList = new List<Accident>();
+            accList = new List<Accident>();
 
             LeisnerRef.AccidentDTO[] L1 = cli.ReadAccidents(userID);
 
@@ -67,7 +75,7 @@ namespace LeisnerWebApplication
                 accList.Add(acc);
             }
 
-            
+
 
             ListView1.DataSource = accList;
             ListView1.DataBind();
@@ -77,9 +85,19 @@ namespace LeisnerWebApplication
         {
             DateTime date = DateTime.Parse(txtb_Date.Text);
 
+            //foreach(Accident a in listofAccidents)
+            //{
+            //    if (a.AccidentID == int.Parse(txtb_AccidentID.Text))
+            //    {
+            //        a.Amount = int.Parse(txtb_Amount.Text);
+            //        a.Date = date;
+            //        a.DeviceID = int.Parse(txtb_DeviceID.Text);
+            //    }
+            //}
+
             cli.UpdateAccident(int.Parse(txtb_AccidentID.Text), int.Parse(txtb_Amount.Text), date, int.Parse(txtb_DeviceID.Text));
 
-            
+            lbl_Status.Text = "Status: Update Successful";
         }
 
         protected void rBtn_DeviceID_CheckedChanged(object sender, EventArgs e)
@@ -115,7 +133,7 @@ namespace LeisnerWebApplication
         {
             txtb_AccidentID.Text = (sender as LinkButton).CommandArgument.ToString();
 
-            foreach (Accident a in listofAccidents)
+            foreach (Accident a in accList)
             {
                 if (a.AccidentID == int.Parse((sender as LinkButton).CommandArgument))
                 {

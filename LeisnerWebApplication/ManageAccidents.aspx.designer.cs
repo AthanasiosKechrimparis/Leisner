@@ -112,6 +112,15 @@ namespace LeisnerWebApplication {
         protected global::System.Web.UI.WebControls.TextBox txtb_AccidentID;
         
         /// <summary>
+        /// lbl_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Status;
+        
+        /// <summary>
         /// rBtn_DeviceID control.
         /// </summary>
         /// <remarks>
