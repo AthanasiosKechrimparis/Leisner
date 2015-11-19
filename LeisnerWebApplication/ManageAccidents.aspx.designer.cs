@@ -94,6 +94,24 @@ namespace LeisnerWebApplication {
         protected global::System.Web.UI.WebControls.Button btn_Update;
         
         /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// txtb_AccidentID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtb_AccidentID;
+        
+        /// <summary>
         /// rBtn_DeviceID control.
         /// </summary>
         /// <remarks>
