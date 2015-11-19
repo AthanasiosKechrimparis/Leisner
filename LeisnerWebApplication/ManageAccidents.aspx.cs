@@ -10,10 +10,11 @@ namespace LeisnerWebApplication
 {
     public partial class ManageAccidents : System.Web.UI.Page
     {
+        List<Accident> listofAccidents;
         BWSServiceClient cli = new BWSServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Accident> listofAccidents = new List<Accident>();
+            listofAccidents = new List<Accident>();
 
             Accident a1 = new Accident(1, 123, new DateTime(2015, 10, 10), 5);
             Accident a2 = new Accident(2, 456, new DateTime(2015, 4, 8), 10);
@@ -104,6 +105,11 @@ namespace LeisnerWebApplication
             txtb_Date.Enabled = true;
             txtb_Hour.Enabled = true;
             txtb_Minute.Enabled = true;
+        }
+
+        protected void SelectAccident(object sender, EventArgs e)
+        {
+            txtb_AccidentID.Text = (sender as LinkButton).CommandArgument.ToString();
         }
     }
 }

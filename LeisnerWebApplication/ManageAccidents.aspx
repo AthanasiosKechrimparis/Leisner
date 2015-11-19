@@ -41,7 +41,7 @@
                <ItemTemplate>
                 <tr style="">
                     <td>
-                        <asp:LinkButton ID="lnkSelect" Text="Select" CommandName="Select" runat="server" />
+                        <asp:LinkButton ID="lnkSelect" Text="Select" CommandName="Select" runat="server" OnClick="SelectAccident" CommandArgument='<%# Eval("AccidentID") %>'/>
                     </td>
                     <td>
                         <asp:Label ID="AccidentIDLabel" runat="server" Text='<%# Eval("AccidentID") %>' />
@@ -58,6 +58,26 @@
                     </td>
                 </tr>
             </ItemTemplate>
+         <%--<SelectedItemTemplate>
+                <tr style="background-color: #336699; color: White;">
+                    <td>
+                        <asp:LinkButton ID="lnkSelect" Text="Select" CommandName="Select" runat="server" />
+                    </td>
+                    <td>
+                        <asp:Label ID="AccidentIDLabel" runat="server" Text='<%# Eval("AccidentID") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="DateLabel" runat="server" Text='<%# Eval("Date") %>' />
+                    </td>
+                    <td>
+                        <asp:Label ID="AmountLabel" runat="server" Text='<%# Eval("Amount") %>' />
+
+                    </td>
+                    <td>
+                        <asp:Label ID="DeviceIDLabel" runat="server" Text='<%# Eval("DeviceID") %>' />
+                    </td>
+                </tr>
+            </SelectedItemTemplate>--%>
         </asp:ListView>
                 </td>
                 <td aria-multiline="False">
