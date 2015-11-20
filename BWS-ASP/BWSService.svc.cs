@@ -103,6 +103,7 @@ namespace BWS_ASP
             Admin adm = new Admin();
             List<Accident> listOfAcc = adm.GetStatisticsFromDB(UserID);
             return GetAccidents(listOfAcc);
+
            
         }
 
@@ -113,3 +114,4 @@ namespace BWS_ASP
         }
     }
 }
+
