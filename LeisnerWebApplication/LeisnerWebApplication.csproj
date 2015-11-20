@@ -61,6 +61,7 @@
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
     <Content Include="CreateUserPage.aspx" />
+    <Content Include="InsertAccidentPage.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="ManageAccidents.aspx" />
     <None Include="Service References\LeisnerRef\BWSService.disco" />
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="CreateUserPage.aspx.designer.cs">
       <DependentUpon>CreateUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertAccidentPage.aspx.cs">
+      <DependentUpon>InsertAccidentPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertAccidentPage.aspx.designer.cs">
+      <DependentUpon>InsertAccidentPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>

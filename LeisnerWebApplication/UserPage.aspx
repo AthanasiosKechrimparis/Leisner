@@ -12,7 +12,7 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View Accidents" />
     </div>
         <div>
-            <asp:Button ID="btnCreateAcc" runat="server" Text="Add New Accident" />
+            <asp:Button ID="btnCreateAcc" runat="server" Text="Add New Accident" OnClick="btnCreateAcc_Click" />
         </div>
     </form>
 </body>

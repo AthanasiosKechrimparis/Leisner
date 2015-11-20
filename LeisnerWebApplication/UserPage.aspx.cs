@@ -18,5 +18,10 @@ namespace LeisnerWebApplication
         {
             Response.Redirect("ViewAccidents.aspx");
         }
+
+        protected void btnCreateAcc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InsertAccidentPage.aspx");
+        }
     }
 }
