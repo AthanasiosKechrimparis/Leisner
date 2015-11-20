@@ -19,6 +19,8 @@ namespace LeisnerWebApplication
                 if (Session["Perm"] == null)
                 {
                     lbl_Status.Text = "Login Failed";
+                    txtb_Password.Text = "";
+                    txtb_Username.Text = "";
                 }
             }
         }
@@ -54,7 +56,7 @@ namespace LeisnerWebApplication
             {
                 
                 throw;
-                lbl_Status.Text = "Login failed";
+                
             }
           
             

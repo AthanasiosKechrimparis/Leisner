@@ -12,11 +12,13 @@
                 <asp:Label ID="Label2" runat="server" Text="UserType"></asp:Label>
 &nbsp;&nbsp;<asp:DropDownList ID="DropDownList1" runat="server" Width="123px" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Choose User type"></asp:RequiredFieldValidator>
+                &nbsp;&nbsp;&nbsp;
     <br />
         <asp:Label ID="lbl_Name" runat="server" Text="Name"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtb_Name" runat="server" style="margin-top: 4px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtb_Name" ErrorMessage="Please enter Name"></asp:RequiredFieldValidator>
         <br />
                 <asp:Label ID="Label8" runat="server" Text="Birthd"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -24,9 +26,11 @@
         <br />
         <asp:Label ID="lbl_Username" runat="server" Text="Username"></asp:Label>
 &nbsp;<asp:TextBox ID="txtb_Username" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtb_Username" ErrorMessage="Please enter Username"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="lbl_Password" runat="server" Text="Password"></asp:Label>
 &nbsp;<asp:TextBox ID="txtb_Password" runat="server" style="margin-left: 0px"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please enter Password"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="lbl_Device" runat="server" Text="Device"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
