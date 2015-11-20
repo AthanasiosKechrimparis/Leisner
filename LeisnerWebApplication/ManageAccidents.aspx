@@ -98,6 +98,9 @@
                     <asp:Label ID="Label8" runat="server" Text="AccidentID"></asp:Label>
                     <asp:TextBox ID="txtb_AccidentID" runat="server"></asp:TextBox>
                     
+                    <br />
+                    <asp:Label ID="lbl_Status" runat="server" Text="Status"></asp:Label>
+                    
                 </td>
                 
             </tr>
