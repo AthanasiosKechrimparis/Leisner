@@ -7,11 +7,11 @@
     <title></title>
 </head>
 <body>
-    <h1>Enter Accident</h1>
+    <h1>Register Accident</h1>
     <form id="form1" runat="server">
     <div>   
         <strong>Enter Device ID :&nbsp;</strong> 
-        <asp:TextBox ID="txtDevice" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtDevice" runat="server" style="font-weight: 700"></asp:TextBox>
         <br />
         <br />
     </div>
@@ -29,16 +29,13 @@
         <div>
             <strong>Choose Date and Time :
         <br />
-            <asp:RadioButtonList ID="rdbListDate" runat="server" AutoPostBack="True" Height="16px" RepeatDirection="Horizontal" Width="384px">
+            <asp:RadioButtonList ID="rdbListDate" runat="server" AutoPostBack="True" Height="16px" RepeatDirection="Horizontal" Width="384px" OnSelectedIndexChanged="rdbListDate_SelectedIndexChanged">
                 <asp:ListItem Value="0">Current Date</asp:ListItem>
                 <asp:ListItem Value="1">Custom Date</asp:ListItem>
             </asp:RadioButtonList>
         </strong>
         </div>
         <div>
-
-            &nbsp;
-
             <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="23px" Width="114px" SelectionMode="DayWeekMonth">
                 <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                 <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
@@ -50,13 +47,11 @@
                 <WeekendDayStyle BackColor="#CCCCFF" />
             </asp:Calendar>
             <br />
-            &nbsp;<asp:TextBox ID="txtHour" runat="server" AutoPostBack="True">Hour</asp:TextBox>
+            &nbsp;<asp:TextBox ID="txtHour" runat="server" style="font-weight: 700">Hour</asp:TextBox>
 &nbsp;&nbsp; <strong>&nbsp;and</strong>&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtMinute" runat="server" AutoPostBack="True">Minutes</asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtMinute" runat="server" style="font-weight: 700">Minutes</asp:TextBox>
             <br />
             <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
         </div>
         <div>
@@ -66,20 +61,18 @@
             <br />
         </div>
         <div>
-
             <strong>Time went to Sleep :&nbsp;</strong>
-            <asp:TextBox ID="txttimeSleep" runat="server" CssClass="auto-style1">Hour</asp:TextBox>
+            <asp:TextBox ID="txttimeSleep" runat="server" CssClass="auto-style1" style="font-weight: bold">Hour</asp:TextBox>
 &nbsp; and&nbsp;
-            <asp:TextBox ID="txtminutesleep" runat="server" CssClass="auto-style1">Minutes</asp:TextBox>
+            <asp:TextBox ID="txtminutesleep" runat="server" CssClass="auto-style1" style="font-weight: bold">Minutes</asp:TextBox>
             <br />
             <br />
         </div>
         <div>
-
             <strong>Toilet time before Sleep :</strong>&nbsp;
-            <asp:TextBox ID="txthoursToilet" runat="server" CssClass="auto-style1">Hours</asp:TextBox>
+            <asp:TextBox ID="txthoursToilet" runat="server" CssClass="auto-style1" style="font-weight: bold">Hours</asp:TextBox>
 &nbsp; and&nbsp;
-            <asp:TextBox ID="txtminutesToilet" runat="server" CssClass="auto-style1">Minutes</asp:TextBox>
+            <asp:TextBox ID="txtminutesToilet" runat="server" CssClass="auto-style1" style="font-weight: bold">Minutes</asp:TextBox>
             <br />
             <br />
         </div>

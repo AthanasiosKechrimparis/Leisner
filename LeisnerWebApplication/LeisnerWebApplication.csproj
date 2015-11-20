@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
+    <Content Include="ConfirmationAccPage.aspx" />
     <Content Include="CreateUserPage.aspx" />
     <Content Include="InsertAccidentPage.aspx" />
     <Content Include="MainPage.aspx" />
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationAccPage.aspx.cs">
+      <DependentUpon>ConfirmationAccPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmationAccPage.aspx.designer.cs">
+      <DependentUpon>ConfirmationAccPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateUserPage.aspx.cs">
       <DependentUpon>CreateUserPage.aspx</DependentUpon>

@@ -164,10 +164,10 @@ namespace LeisnerWebApplication.LeisnerRef {
         System.Threading.Tasks.Task DeleteAccidentsAsync(int AccidentID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/SignUp", ReplyAction="http://tempuri.org/IBWSService/SignUpResponse")]
-        void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID);
+        void SignUp(string UserName, string PassWord, int Permision, string Name, int Age);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/SignUp", ReplyAction="http://tempuri.org/IBWSService/SignUpResponse")]
-        System.Threading.Tasks.Task SignUpAsync(string type, string birthday, string UserName, string PassWord, string Name, int deviceID);
+        System.Threading.Tasks.Task SignUpAsync(string UserName, string PassWord, int Permision, string Name, int Age);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/ReadAccidents", ReplyAction="http://tempuri.org/IBWSService/ReadAccidentsResponse")]
         LeisnerWebApplication.LeisnerRef.AccidentDTO[] ReadAccidents(int UserID);
@@ -259,12 +259,12 @@ namespace LeisnerWebApplication.LeisnerRef {
             return base.Channel.DeleteAccidentsAsync(AccidentID);
         }
         
-        public void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID) {
-            base.Channel.SignUp(type, birthday, UserName, PassWord, Name, deviceID);
+        public void SignUp(string UserName, string PassWord, int Permision, string Name, int Age) {
+            base.Channel.SignUp(UserName, PassWord, Permision, Name, Age);
         }
         
-        public System.Threading.Tasks.Task SignUpAsync(string type, string birthday, string UserName, string PassWord, string Name, int deviceID) {
-            return base.Channel.SignUpAsync(type, birthday, UserName, PassWord, Name, deviceID);
+        public System.Threading.Tasks.Task SignUpAsync(string UserName, string PassWord, int Permision, string Name, int Age) {
+            return base.Channel.SignUpAsync(UserName, PassWord, Permision, Name, Age);
         }
         
         public LeisnerWebApplication.LeisnerRef.AccidentDTO[] ReadAccidents(int UserID) {
