@@ -11,7 +11,13 @@ namespace LeisnerWebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lbDevice.Text = (string)Session["Device"];
+            lbAmount.Text = (string)Session["Amount"];
+            lbTimeAcc.Text = (string)Session["DateAccident"];
+            lbDrinks.Text = (string)Session["Drink"];
+            lbTimeSleep.Text = (string)Session["DateSleep"];
+            lbTimeToilet.Text = (string)Session["ToiletSleep"];
+            lbToiletVisit.Text = (string)Session["ToiletVisit"];
         }
     }
 }
