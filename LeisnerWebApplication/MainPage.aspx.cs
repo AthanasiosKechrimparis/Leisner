@@ -14,7 +14,13 @@ namespace LeisnerWebApplication
          
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                if (Session["Perm"] == null)
+                {
+                    lbl_Status.Text = "Login Failed";
+                }
+            }
         }
 
         protected void btn_Login_Click(object sender, EventArgs e)
