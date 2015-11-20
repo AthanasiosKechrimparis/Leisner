@@ -26,7 +26,7 @@ namespace BWS_ASP
         [OperationContract]
         void Dowork();
         [OperationContract]
-        void RegisterAccident(int deviceNR, int amount, DateTime timeOfAccident);
+        void RegisterAccident(int deviceNR, int amount, DateTime timeOfAccident,int Drinks,DateTime TimeSleep,DateTime TimeToilet,int ToiletVisit);
 
         [OperationContract]
         List<AccidentDTO> GetSatisticBasedOnUser(int ID, DateTime startdate, DateTime enddate);
