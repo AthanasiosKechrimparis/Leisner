@@ -16,6 +16,14 @@ namespace BWS_ASP
         [DataMember]
         public int Amount { get; set; }
         [DataMember]
+        public int Drinks { get; set; }
+         [DataMember]
+        public DateTime TimeSleep { get; set; }
+         [DataMember]
+         public DateTime TimeToilet { get; set; }
+         [DataMember]
+         public int ToiletVisit { get; set; }
+        [DataMember]
         public Device dev { get; set; }
         [DataMember]
         public int ST { get; set; }

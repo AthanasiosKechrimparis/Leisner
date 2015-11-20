@@ -22,11 +22,11 @@ namespace BWS_ASP
             _lock = new object();
         }
 
-        public void RegisterAccident(int deviceNr, int amount, DateTime timeOfAccident)
+        /*public void RegisterAccident(int deviceNr, int amount, DateTime timeOfAccident)
         {
             dev = new Device(deviceNr);
             dev.RegisterAccident(amount, timeOfAccident);
-        }
+        }*/
 
         public void Dowork()
         {
@@ -111,6 +111,13 @@ namespace BWS_ASP
             List<Accident> listOfAcc = adm.GetStatisticsFromDB(UserID);
             return GetAccidents(listOfAcc);
            
+        }
+
+
+        public void RegisterAccident(int deviceNR, int amount, DateTime timeOfAccident, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit)
+        {
+            dev = new Device(deviceNR);
+            dev.RegisterAccident(amount, timeOfAccident,Drinks,TimeSleep,TimeToilet,ToiletVisit);
         }
     }
 }
