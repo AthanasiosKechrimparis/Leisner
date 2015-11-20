@@ -21,13 +21,6 @@ namespace BWS_ASP
             listofAccidents = new List<Accident>();
             _lock = new object();
         }
-
-        /*public void RegisterAccident(int deviceNr, int amount, DateTime timeOfAccident)
-        {
-            dev = new Device(deviceNr);
-            dev.RegisterAccident(amount, timeOfAccident);
-        }*/
-
         public void Dowork()
         {
             throw new NotImplementedException();
@@ -113,11 +106,10 @@ namespace BWS_ASP
            
         }
 
-
         public void RegisterAccident(int deviceNR, int amount, DateTime timeOfAccident, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit)
         {
             dev = new Device(deviceNR);
-            dev.RegisterAccident(amount, timeOfAccident,Drinks,TimeSleep,TimeToilet,ToiletVisit);
+            dev.RegisterAccident(amount, timeOfAccident, Drinks, TimeSleep, TimeToilet, ToiletVisit);
         }
     }
 }

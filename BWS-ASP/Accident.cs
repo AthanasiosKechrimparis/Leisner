@@ -23,6 +23,8 @@ namespace BWS_ASP
          public DateTime TimeToilet { get; set; }
          [DataMember]
          public int ToiletVisit { get; set; }
+         [DataMember]
+         public int Version { get; set; }
         [DataMember]
         public Device dev { get; set; }
         [DataMember]
@@ -51,6 +53,15 @@ namespace BWS_ASP
             this.Amount = amount;
             this.dev = device;
         }
-
+        public Accident(DateTime TimeOfAccident, int Amount, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit, int Version)
+        {
+            this.TimeOfAccident = TimeOfAccident;
+            this.Amount = Amount;
+            this.Drinks = Drinks;
+            this.TimeSleep = TimeSleep;
+            this.TimeToilet = TimeToilet;
+            this.ToiletVisit = ToiletVisit;
+            this.Version = Version;
+        }
     }
 }

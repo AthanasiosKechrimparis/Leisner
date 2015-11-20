@@ -32,10 +32,11 @@ namespace BWS_ASP
             this.DeviceNumber = deviceNumber;          
         }
 
-        public void RegisterAccident( int amount, DateTime time, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit)
+        public void RegisterAccident( int amount, DateTime time, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit )
         {
             Transaction trans;
             SqlCommand cmd;
+            
 
              trans = new Transaction();
              
@@ -52,12 +53,11 @@ namespace BWS_ASP
                 cmd.Parameters.Add(new SqlParameter("@Drinks", Drinks));
                 cmd.Parameters.Add(new SqlParameter("@TimeSleep", TimeSleep));
                 cmd.Parameters.Add(new SqlParameter("@TimeToilet", TimeToilet));
-                cmd.Parameters.Add(new SqlParameter("@ToiletVisit", ToiletVisit));
-
-
-                
+                cmd.Parameters.Add(new SqlParameter("@Toilet", ToiletVisit));
+                //cmd.Parameters.Add(new SqlParameter("@Version", (Version + 1)));
 
                 cmd.ExecuteNonQuery();
+
             }
             catch (Exception e)
             {
