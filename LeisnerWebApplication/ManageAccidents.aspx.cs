@@ -29,6 +29,12 @@ namespace LeisnerWebApplication
             //ListView1.DataBind();
             if (!IsPostBack)
             {
+                if(ViewState["AccidentList"] != null)
+                {
+                    ListView1.DataSource = (List<Accident>)ViewState["AccidentList"];
+                    ListView1.DataBind();
+                }
+
                 txtb_Amount.Enabled = false;
                 txtb_DeviceID.Enabled = false;
                 txtb_Date.Enabled = false;
@@ -75,7 +81,7 @@ namespace LeisnerWebApplication
                 accList.Add(acc);
             }
 
-
+            ViewState["AccidentList"] = accList;
 
             ListView1.DataSource = accList;
             ListView1.DataBind();
@@ -133,7 +139,7 @@ namespace LeisnerWebApplication
         {
             txtb_AccidentID.Text = (sender as LinkButton).CommandArgument.ToString();
 
-            foreach (Accident a in accList)
+            foreach (Accident a in (List<Accident>)ViewState["AccidentList"])
             {
                 if (a.AccidentID == int.Parse((sender as LinkButton).CommandArgument))
                 {

@@ -86,6 +86,7 @@
                     <asp:Label ID="Label6" runat="server" Text="UserID"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="txtb_UserID" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtb_UserID" EnableViewState="False" ErrorMessage="Please insert ID"></asp:RequiredFieldValidator>
                     <br />
                     <asp:Label ID="Label7" runat="server" Text="Choose Date"></asp:Label>
                     <asp:TextBox ID="txtb_AccidentDate" runat="server"></asp:TextBox>
