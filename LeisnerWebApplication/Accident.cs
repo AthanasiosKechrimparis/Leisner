@@ -5,6 +5,7 @@ using System.Web;
 
 namespace LeisnerWebApplication
 {
+    [Serializable]
     public class Accident
     {
         public int DeviceID { get; set; }
