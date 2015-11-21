@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LeisnerWebApplication.LeisnerRef;
 
 namespace LeisnerWebApplication
 {
@@ -18,6 +19,13 @@ namespace LeisnerWebApplication
             lbTimeSleep.Text = (string)Session["DateSleep"];
             lbTimeToilet.Text = (string)Session["ToiletSleep"];
             lbToiletVisit.Text = (string)Session["ToiletVisit"];
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            
+
+
         }
     }
 }

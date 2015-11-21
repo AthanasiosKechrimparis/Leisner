@@ -128,10 +128,10 @@ namespace LeisnerWebApplication.LeisnerRef {
         System.Threading.Tasks.Task DoworkAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/RegisterAccident", ReplyAction="http://tempuri.org/IBWSService/RegisterAccidentResponse")]
-        void RegisterAccident(int deviceNR, int amount, System.DateTime timeOfAccident);
+        void RegisterAccident(int deviceNR, int amount, System.DateTime timeOfAccident, int Drinks, System.DateTime TimeSleep, System.DateTime TimeToilet, int ToiletVisit);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/RegisterAccident", ReplyAction="http://tempuri.org/IBWSService/RegisterAccidentResponse")]
-        System.Threading.Tasks.Task RegisterAccidentAsync(int deviceNR, int amount, System.DateTime timeOfAccident);
+        System.Threading.Tasks.Task RegisterAccidentAsync(int deviceNR, int amount, System.DateTime timeOfAccident, int Drinks, System.DateTime TimeSleep, System.DateTime TimeToilet, int ToiletVisit);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetSatisticBasedOnUser", ReplyAction="http://tempuri.org/IBWSService/GetSatisticBasedOnUserResponse")]
         LeisnerWebApplication.LeisnerRef.AccidentDTO[] GetSatisticBasedOnUser(int ID, System.DateTime startdate, System.DateTime enddate);
@@ -164,10 +164,10 @@ namespace LeisnerWebApplication.LeisnerRef {
         System.Threading.Tasks.Task DeleteAccidentsAsync(int AccidentID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/SignUp", ReplyAction="http://tempuri.org/IBWSService/SignUpResponse")]
-        void SignUp(string UserName, string PassWord, int Permision, string Name, int Age);
+        void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/SignUp", ReplyAction="http://tempuri.org/IBWSService/SignUpResponse")]
-        System.Threading.Tasks.Task SignUpAsync(string UserName, string PassWord, int Permision, string Name, int Age);
+        System.Threading.Tasks.Task SignUpAsync(string type, string birthday, string UserName, string PassWord, string Name, int deviceID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/ReadAccidents", ReplyAction="http://tempuri.org/IBWSService/ReadAccidentsResponse")]
         LeisnerWebApplication.LeisnerRef.AccidentDTO[] ReadAccidents(int UserID);
@@ -211,12 +211,12 @@ namespace LeisnerWebApplication.LeisnerRef {
             return base.Channel.DoworkAsync();
         }
         
-        public void RegisterAccident(int deviceNR, int amount, System.DateTime timeOfAccident) {
-            base.Channel.RegisterAccident(deviceNR, amount, timeOfAccident);
+        public void RegisterAccident(int deviceNR, int amount, System.DateTime timeOfAccident, int Drinks, System.DateTime TimeSleep, System.DateTime TimeToilet, int ToiletVisit) {
+            base.Channel.RegisterAccident(deviceNR, amount, timeOfAccident, Drinks, TimeSleep, TimeToilet, ToiletVisit);
         }
         
-        public System.Threading.Tasks.Task RegisterAccidentAsync(int deviceNR, int amount, System.DateTime timeOfAccident) {
-            return base.Channel.RegisterAccidentAsync(deviceNR, amount, timeOfAccident);
+        public System.Threading.Tasks.Task RegisterAccidentAsync(int deviceNR, int amount, System.DateTime timeOfAccident, int Drinks, System.DateTime TimeSleep, System.DateTime TimeToilet, int ToiletVisit) {
+            return base.Channel.RegisterAccidentAsync(deviceNR, amount, timeOfAccident, Drinks, TimeSleep, TimeToilet, ToiletVisit);
         }
         
         public LeisnerWebApplication.LeisnerRef.AccidentDTO[] GetSatisticBasedOnUser(int ID, System.DateTime startdate, System.DateTime enddate) {
@@ -259,12 +259,12 @@ namespace LeisnerWebApplication.LeisnerRef {
             return base.Channel.DeleteAccidentsAsync(AccidentID);
         }
         
-        public void SignUp(string UserName, string PassWord, int Permision, string Name, int Age) {
-            base.Channel.SignUp(UserName, PassWord, Permision, Name, Age);
+        public void SignUp(string type, string birthday, string UserName, string PassWord, string Name, int deviceID) {
+            base.Channel.SignUp(type, birthday, UserName, PassWord, Name, deviceID);
         }
         
-        public System.Threading.Tasks.Task SignUpAsync(string UserName, string PassWord, int Permision, string Name, int Age) {
-            return base.Channel.SignUpAsync(UserName, PassWord, Permision, Name, Age);
+        public System.Threading.Tasks.Task SignUpAsync(string type, string birthday, string UserName, string PassWord, string Name, int deviceID) {
+            return base.Channel.SignUpAsync(type, birthday, UserName, PassWord, Name, deviceID);
         }
         
         public LeisnerWebApplication.LeisnerRef.AccidentDTO[] ReadAccidents(int UserID) {

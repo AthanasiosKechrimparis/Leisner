@@ -33,25 +33,28 @@
             <br /> 
         </asp:Panel>
         <asp:Panel ID="Panel2" runat="server" Height="174px" Width="232px" CssClass="inlineBlock">
-            <asp:Label ID="lbDevice" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbDevice" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
-            <asp:Label ID="lbAmount" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbAmount" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
-            <asp:Label ID="lbTimeAcc" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbTimeAcc" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
-            <asp:Label ID="lbDrinks" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbDrinks" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
-            <asp:Label ID="lbTimeSleep" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbTimeSleep" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
-            <asp:Label ID="lbTimeToilet" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbTimeToilet" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
-            <asp:Label ID="lbToiletVisit" runat="server" BackColor="#FF3300"></asp:Label>
+            <asp:Label ID="lbToiletVisit" runat="server" BackColor="White" Font-Bold="True" ForeColor="Red"></asp:Label>
             <br /> 
         </asp:Panel>
         
         </strong>
         
     </div>
+        <div>
+            <asp:Button ID="btnSave" runat="server" Text="Save" Font-Bold="True" Font-Italic="True" OnClick="btnSave_Click" />
+        </div>
     </form>
 </body>
 </html>

@@ -17,6 +17,10 @@
         <xs:element minOccurs="0" name="deviceNR" type="xs:int" />
         <xs:element minOccurs="0" name="amount" type="xs:int" />
         <xs:element minOccurs="0" name="timeOfAccident" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Drinks" type="xs:int" />
+        <xs:element minOccurs="0" name="TimeSleep" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="TimeToilet" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ToiletVisit" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -98,11 +102,12 @@
   <xs:element name="SignUp">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthday" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Permision" type="xs:int" />
         <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Age" type="xs:int" />
+        <xs:element minOccurs="0" name="deviceID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

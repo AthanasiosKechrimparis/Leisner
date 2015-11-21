@@ -110,6 +110,15 @@ namespace LeisnerWebApplication
                 ToiletVisitStr = toiletVisit.ToString();
             }
 
+
+            bedAccident.DeviceID = DeviceID;
+            bedAccident.Amount = AmountR;
+            bedAccident.AccidentTime = date;
+            bedAccident.Drinks = Drink;
+            bedAccident.SleepTime = sleepDate;
+            bedAccident.ToiletSleep = toiletDate;
+            bedAccident.ToiletVisit = toiletVisit;
+
             Session["Device"] = Device;
             Session["Amount"] = AmountStr;
             Session["DateAccident"] = DateSleepStr;
