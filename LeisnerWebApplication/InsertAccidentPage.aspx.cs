@@ -5,11 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LeisnerWebApplication.LeisnerRef;
 
 namespace LeisnerWebApplication
 {
+   
     public partial class InsertAccidentPage : System.Web.UI.Page
     {
+        LeisnerRef.BWSServiceClient service = new BWSServiceClient();
+
         string AmountStr;
         int AmountR;
         string DateSleepStr;
@@ -110,14 +114,7 @@ namespace LeisnerWebApplication
                 ToiletVisitStr = toiletVisit.ToString();
             }
 
-
-            bedAccident.DeviceID = DeviceID;
-            bedAccident.Amount = AmountR;
-            bedAccident.AccidentTime = date;
-            bedAccident.Drinks = Drink;
-            bedAccident.SleepTime = sleepDate;
-            bedAccident.ToiletSleep = toiletDate;
-            bedAccident.ToiletVisit = toiletVisit;
+            service.RegisterAccident(DeviceID, AmountR, date, Drink, sleepDate, toiletDate, toiletVisit);
 
             Session["Device"] = Device;
             Session["Amount"] = AmountStr;
