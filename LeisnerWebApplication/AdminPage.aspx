@@ -8,6 +8,24 @@
     <style type="text/css">
         .auto-style1 {
             height: 23px;
+            width: 301px;
+        }
+        .auto-style2 {
+            width: 300px;
+        }
+        .auto-style3 {
+            height: 23px;
+            width: 300px;
+        }
+        .auto-style4 {
+            width: 298px;
+        }
+        .auto-style5 {
+            height: 23px;
+            width: 298px;
+        }
+        .auto-style6 {
+            width: 301px;
         }
     </style>
 </head>
@@ -17,25 +35,36 @@
     
         <table style="width:100%;">
             <tr>
-                <td>
+                <td class="auto-style2">
                     <asp:Button ID="btn_ManageAcc" runat="server" OnClick="btn_ManageAcc_Click" Text="Manage Accidents" />
                 </td>
-                <td>
+                <td class="auto-style2">
                     <asp:Button ID="btn_Statistics" runat="server" OnClick="btn_Statistics_Click" Text="Statistics" />
                 </td>
-                <td>
+                <td class="auto-style2">
                     <asp:Button ID="btn_CreateUser" runat="server" OnClick="btn_CreateUser_Click" Text="Create User" />
+                </td>
+                <td class="auto-style2">
+
+                    <asp:Button ID="btn_Messages" runat="server" Text="Messages" />
+
                 </td>
             </tr>
             <tr>
+                <td class="auto-style3"></td>
                 <td class="auto-style1"></td>
-                <td class="auto-style1"></td>
-                <td class="auto-style1"></td>
+                <td class="auto-style5"></td>
+                <td>
+
+                </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style4">&nbsp;</td>
+                <td>
+
+                </td>
             </tr>
         </table>
     
