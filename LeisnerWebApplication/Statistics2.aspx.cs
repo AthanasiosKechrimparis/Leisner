@@ -11,14 +11,14 @@ namespace Statistics
 
     public partial class Default : System.Web.UI.Page
     {
-        Accident2 demo1 = new Accident(DateTime.Today, DateTime.ParseExact("21:00:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 3, false, 1, 1);
-        Accident2 demo2 = new Accident(DateTime.Today, DateTime.ParseExact("22:30:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 1, false, 1, 2);
-        Accident demo3 = new Accident(DateTime.Today, DateTime.ParseExact("21:00:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 3, false, 1, 3);
-        Accident demo4 = new Accident(DateTime.ParseExact("15-11-2015", "dd-MM-yyyy", null), DateTime.ParseExact("22:30:00", "H:m:s", null), DateTime.ParseExact("21:00:00", "H:m:s", null), 1, false, 1, 4);
-        Accident demo5 = new Accident(DateTime.ParseExact("11-11-2015", "dd-MM-yyyy", null), DateTime.ParseExact("20:30:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 2, false, 1, 5);
-        List<Accident> accidentsDay = new List<Accident>();
-        List<Accident> accidentsMulti = new List<Accident>();
-        List<Accident> accidents = new List<Accident>();
+        Accident2 demo1 = new Accident2(DateTime.Today, DateTime.ParseExact("21:00:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 3, false, 1, 1);
+        Accident2 demo2 = new Accident2(DateTime.Today, DateTime.ParseExact("22:30:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 1, false, 1, 2);
+        Accident2 demo3 = new Accident2(DateTime.Today, DateTime.ParseExact("21:00:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 3, false, 1, 3);
+        Accident2 demo4 = new Accident2(DateTime.ParseExact("15-11-2015", "dd-MM-yyyy", null), DateTime.ParseExact("22:30:00", "H:m:s", null), DateTime.ParseExact("21:00:00", "H:m:s", null), 1, false, 1, 4);
+        Accident2 demo5 = new Accident2(DateTime.ParseExact("11-11-2015", "dd-MM-yyyy", null), DateTime.ParseExact("20:30:00", "H:m:s", null), DateTime.ParseExact("20:00:00", "H:m:s", null), 2, false, 1, 5);
+        List<Accident2> accidentsDay = new List<Accident2>();
+        List<Accident2> accidentsMulti = new List<Accident2>();
+        List<Accident2> accidents = new List<Accident2>();
         List<Day> days = new List<Day>();
         List<DateTime> xDates = new List<DateTime>();
         List<int> ySizes = new List<int>();
@@ -35,10 +35,10 @@ namespace Statistics
             }
 
         }
-        public int GetAverage(List<Accident> accidentlist)
+        public int GetAverage(List<Accident2> accidentlist)
         {
             int i = 0;
-            foreach (Accident a in accidentlist)
+            foreach (Accident2 a in accidentlist)
             {
                 i = i + a.sizeOfAccident;
             }
@@ -96,7 +96,7 @@ namespace Statistics
             days.Add(day1);
             days.Add(day2);
             days.Add(day3);
-            foreach (Accident a in accidents)
+            foreach (Accident2 a in accidents)
             {
                 xDates.Add(a.startDate);
                 ySizes.Add(a.sizeOfAccident);
@@ -145,8 +145,8 @@ namespace Statistics
         protected void Method(object sender, EventArgs e)
         {
             ButtonStuff();
-            List<Accident> dayaccidents = new List<Accident>();
-            foreach (Accident a in accidents)
+            List<Accident2> dayaccidents = new List<Accident2>();
+            foreach (Accident2 a in accidents)
             {
                 if (a.startDate == DateTime.Parse((sender as LinkButton).CommandArgument))
                 {
