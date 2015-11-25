@@ -44,10 +44,12 @@ namespace LeisnerWebApplication
                 if (perm == 1)
                 {
                     Response.Redirect("AdminPage.aspx");
+                    
                 }
                 else if (perm == 0)
                 {
                     Response.Redirect("UserPage.aspx");
+                   
                 }
 
                 Session.Add("Perm", perm);
