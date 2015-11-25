@@ -51,5 +51,9 @@ namespace BWS_ASP
         [OperationContract]
         int getIDFromUsername(string username);
 
+        [OperationContract]
+
+        List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, int DeviceNr);
+
     }
 }

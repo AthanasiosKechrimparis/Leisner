@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Statistics {
+namespace BWS_ASP {
     
     
     public partial class Default {

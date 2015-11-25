@@ -65,11 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accident.cs" />
+    <Compile Include="Accident2.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="BWSService.svc.cs">
       <DependentUpon>BWSService.svc</DependentUpon>
     </Compile>
     <Compile Include="Costumer.cs" />
+    <Compile Include="Day.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="IBWSService.cs" />
     <Compile Include="IUser.cs" />
