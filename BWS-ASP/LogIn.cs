@@ -20,12 +20,15 @@ namespace BWS_ASP
         public string PassWord { get; set; }
         [DataMember]
         public int Permision { get; set; }
+        [DataMember]
+        public int userID { get; set; }
 
         public LogIn()
         {
             this.UserName = UserName;
             this.PassWord = PassWord;
             this.Permision = Permision;
+            this.userID = userID;
         }
 
 
@@ -47,8 +50,11 @@ namespace BWS_ASP
                 if (dbr.HasRows)
                 {
                     Perm = (int)dbr["TypeOfUser"];
+                    
                 }
+                
             }
+            dbr.Close();
             trans.GetConnection().Close();
             return Perm;
         }
@@ -58,6 +64,8 @@ namespace BWS_ASP
         {
             Transaction trans;
             SqlCommand cmd;
+
+            
 
             trans = new Transaction();
             trans.BegindTransactions();
@@ -85,6 +93,71 @@ namespace BWS_ASP
             trans.Commit();
 
         }
+
+        public int getUserIDFromUsername(string username)
+        {
+            //userID = 0;
+
+            trans = new Transaction();
+            trans.BegindTransactions();
+
+            try
+            {
+                SqlDataReader dbr;
+                cmd = new SqlCommand("getIDfromUsername", trans.getcon(), trans.GetTransaction());
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Username", username));
+
+                //SqlParameter paramUserID = new SqlParameter("@UserID", 1);
+                //paramUserID.Direction = ParameterDirection.Output;
+
+                //cmd.Parameters.Add(paramUserID);
+
+                //Object OuserID = (int)cmd.Parameters["@UserID"].Value;
+
+                cmd.ExecuteNonQuery();
+
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read() == true)
+                {
+                    if (dbr.HasRows)
+                    {
+                        userID = (int)dbr["UserID"];
+
+                    }
+
+                }
+                dbr.Close();
+                
+
+                //SqlDataReader rdr = cmd.ExecuteReader();
+
+                //rdr = cmd.ExecuteReader();
+                //while (rdr.Read() == true)
+                //{
+                //    if (rdr.HasRows)
+                //    {
+                //        userID = (int)rdr["UserID"];
+                //    }
+                //}
+                    
+                
+            }
+            catch (Exception e)
+            {
+                trans.RollBack();
+                throw e;
+                // trans.getcon().Close();
+            }
+            
+            //trans.Commit();
+            trans.getcon().Close();
+            return userID;
+        }
+
+        public SqlDataReader rbr { get; set; }
     }
 
 }

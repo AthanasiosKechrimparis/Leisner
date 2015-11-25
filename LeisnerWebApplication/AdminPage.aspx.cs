@@ -21,7 +21,7 @@ namespace LeisnerWebApplication
 
         protected void btn_Statistics_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StatisticsPage.aspx");
+            Response.Redirect("Statistics2.aspx");
         }
 
         protected void btn_CreateUser_Click(object sender, EventArgs e)
