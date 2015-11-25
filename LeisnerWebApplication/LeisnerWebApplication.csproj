@@ -76,7 +76,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Statistics2.aspx" />
     <Content Include="StatisticsPage.aspx" />
     <Content Include="UserPage.aspx" />
     <Content Include="ViewAccidents.aspx" />
@@ -135,11 +134,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Statistics2.aspx.cs">
-      <DependentUpon>Statistics2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Statistics2.aspx.designer.cs">
-      <DependentUpon>Statistics2.aspx</DependentUpon>
+      <DependentUpon>Statistics2.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="StatisticsPage.aspx.cs">
       <DependentUpon>StatisticsPage.aspx</DependentUpon>
