@@ -10,13 +10,14 @@ namespace LeisnerWebApplication
 {
     public partial class MainPage : System.Web.UI.Page
     {
-        BWSServiceClient cli = new BWSServiceClient();  
-         
+        BWSServiceClient cli = new BWSServiceClient();
+
+        int perm = 4;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
             {
-                if (Session["Perm"] == null)
+                if (perm == 3)
                 {
                     lbl_Status.Text = "Login Failed";
                     txtb_Password.Text = "";
