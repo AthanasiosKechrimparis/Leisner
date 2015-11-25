@@ -20,6 +20,8 @@ namespace BWS_ASP
         public string PassWord { get; set; }
         [DataMember]
         public int Permision { get; set; }
+        [DataMember]
+        public int userID { get; set; }
 
         public LogIn()
         {
@@ -59,6 +61,8 @@ namespace BWS_ASP
             Transaction trans;
             SqlCommand cmd;
 
+            
+
             trans = new Transaction();
             trans.BegindTransactions();
             try
@@ -84,6 +88,39 @@ namespace BWS_ASP
             }
             trans.Commit();
 
+        }
+
+        public int getUserIDFromUsername(string username)
+        {   
+            
+
+            trans = new Transaction();
+            trans.BegindTransactions();
+            try
+            {
+                cmd = new SqlCommand("getIDfromUsername", trans.getcon(), trans.GetTransaction());
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Username", username));
+                
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                userID = (int)rdr["UserID"];
+                    
+                
+            }
+            catch (Exception e)
+            {
+                trans.RollBack();
+                throw e;
+                // trans.getcon().Close();
+            }
+            
+            //trans.Commit();
+            trans.getcon().Close();
+            return userID;
         }
     }
 

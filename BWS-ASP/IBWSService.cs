@@ -48,5 +48,8 @@ namespace BWS_ASP
         [OperationContract]
         List<AccidentDTO> ReadAccidents(int UserID);
 
+        [OperationContract]
+        int getIDFromUsername(string username);
+
     }
 }

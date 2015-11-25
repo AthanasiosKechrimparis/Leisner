@@ -112,6 +112,14 @@ namespace BWS_ASP
             dev = new Device(deviceNR);
             dev.RegisterAccident(amount, timeOfAccident, Drinks, TimeSleep, TimeToilet, ToiletVisit);
         }
+
+        public int getIDFromUsername(string username)
+        {
+            LogIn log = new LogIn();
+
+            return log.getUserIDFromUsername(username);
+        }
+
     }
 }
 
