@@ -26,7 +26,7 @@ namespace LeisnerWebApplication
                 else if ((int)Session["Perm"] == 0)
                 {
                     txtb_UserID.Enabled = false;
-                    txtb_UserID.Text = Session["Perm"].ToString();
+                    txtb_UserID.Text = Session["UserID"].ToString();
                 }
 
                 if(ViewState["AccidentList"] != null)

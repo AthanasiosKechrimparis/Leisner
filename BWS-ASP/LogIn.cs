@@ -110,13 +110,6 @@ namespace BWS_ASP
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
 
-                //SqlParameter paramUserID = new SqlParameter("@UserID", 1);
-                //paramUserID.Direction = ParameterDirection.Output;
-
-                //cmd.Parameters.Add(paramUserID);
-
-                //Object OuserID = (int)cmd.Parameters["@UserID"].Value;
-
                 cmd.ExecuteNonQuery();
 
                 dbr = cmd.ExecuteReader();
@@ -132,16 +125,6 @@ namespace BWS_ASP
                 dbr.Close();
                 
 
-                //SqlDataReader rdr = cmd.ExecuteReader();
-
-                //rdr = cmd.ExecuteReader();
-                //while (rdr.Read() == true)
-                //{
-                //    if (rdr.HasRows)
-                //    {
-                //        userID = (int)rdr["UserID"];
-                //    }
-                //}
                     
                 
             }
