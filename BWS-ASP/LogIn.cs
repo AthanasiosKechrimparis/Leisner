@@ -92,7 +92,7 @@ namespace BWS_ASP
 
         public int getUserIDFromUsername(string username)
         {
-            userID = 0;
+            userID = 1;
 
             trans = new Transaction();
             trans.BegindTransactions();
@@ -104,12 +104,7 @@ namespace BWS_ASP
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
 
-                SqlParameter paramUserID = new SqlParameter("@UserID", 0);
-                paramUserID.Direction = ParameterDirection.Output;
 
-                cmd.Parameters.Add(paramUserID);
-
-                userID = (int)cmd.Parameters["@UserID"].Value;
 
                 cmd.ExecuteNonQuery();
 
