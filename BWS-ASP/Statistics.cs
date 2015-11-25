@@ -35,7 +35,7 @@ namespace BWS_ASP
         }
 
 
-        public List<Day> GetStatisticsFromDB(int id, DateTime startdate, DateTime enddate)
+        public List<Day> getFromDB()
         {
             Starttime = startdate;
             EndTime = enddate;

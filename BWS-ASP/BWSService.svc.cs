@@ -81,7 +81,7 @@ namespace BWS_ASP
             DateTime D2 = new DateTime();
             D2 = enddate;
 
-                List<Accident> listofAccidents = ST.GetStatisticsFromDB(ID, D1, D2);
+                List<Accident> listofAccidents = ST.getFromDB(ID, D1, D2);
                 return GetAccidents(listofAccidents);
         }
 
