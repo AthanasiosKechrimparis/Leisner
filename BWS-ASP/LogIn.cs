@@ -28,6 +28,7 @@ namespace BWS_ASP
             this.UserName = UserName;
             this.PassWord = PassWord;
             this.Permision = Permision;
+            this.userID = userID;
         }
 
 
@@ -49,8 +50,11 @@ namespace BWS_ASP
                 if (dbr.HasRows)
                 {
                     Perm = (int)dbr["TypeOfUser"];
+                    
                 }
+                
             }
+            dbr.Close();
             trans.GetConnection().Close();
             return Perm;
         }
@@ -92,27 +96,40 @@ namespace BWS_ASP
 
         public int getUserIDFromUsername(string username)
         {
-            userID = 0;
+            //userID = 0;
 
             trans = new Transaction();
             trans.BegindTransactions();
+
             try
             {
+                SqlDataReader dbr;
                 cmd = new SqlCommand("getIDfromUsername", trans.getcon(), trans.GetTransaction());
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
 
-                SqlParameter paramUserID = new SqlParameter("@UserID", 0);
-                paramUserID.Direction = ParameterDirection.Output;
+                //SqlParameter paramUserID = new SqlParameter("@UserID", 1);
+                //paramUserID.Direction = ParameterDirection.Output;
 
-                cmd.Parameters.Add(paramUserID);
+                //cmd.Parameters.Add(paramUserID);
 
-                userID = (int)cmd.Parameters["@UserID"].Value;
+                //Object OuserID = (int)cmd.Parameters["@UserID"].Value;
 
                 cmd.ExecuteNonQuery();
 
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read() == true)
+                {
+                    if (dbr.HasRows)
+                    {
+                        userID = (int)dbr["UserID"];
+
+                    }
+
+                }
+                dbr.Close();
                 
 
                 //SqlDataReader rdr = cmd.ExecuteReader();
