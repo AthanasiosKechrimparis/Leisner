@@ -104,10 +104,11 @@ namespace BWS_ASP
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
                 cmd.Parameters.Add(new SqlParameter("@UserID", 1));
+                userID = (int)cmd.Parameters["@UserID"].Value;
 
                 cmd.ExecuteNonQuery();
 
-                userID = (int)cmd.Parameters["@UserID"].Value;
+                
 
                 //SqlDataReader rdr = cmd.ExecuteReader();
 
