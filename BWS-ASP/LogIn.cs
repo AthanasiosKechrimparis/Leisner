@@ -103,7 +103,12 @@ namespace BWS_ASP
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
-                cmd.Parameters.Add(new SqlParameter("@UserID", 1));
+
+                SqlParameter paramUserID = new SqlParameter("@UserID", 0);
+                paramUserID.Direction = ParameterDirection.Output;
+
+                cmd.Parameters.Add(paramUserID);
+
                 userID = (int)cmd.Parameters["@UserID"].Value;
 
                 cmd.ExecuteNonQuery();
