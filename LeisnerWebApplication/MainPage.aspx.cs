@@ -41,6 +41,9 @@ namespace LeisnerWebApplication
             try
             {
                 int perm = cli.logIn(txtb_Username.Text, txtb_Password.Text);
+                int userID = cli.getIDFromUsername(txtb_Username.Text);
+                Session.Add("UserID", userID);
+                Session.Add("Perm", perm);
 
                 if (perm == 1)
                 {
@@ -52,9 +55,7 @@ namespace LeisnerWebApplication
                     Response.Redirect("UserPage.aspx");
                    
                 }
-                int userID = cli.getIDFromUsername(txtb_Username.Text);
-                Session.Add("UserID", userID);
-                Session.Add("Perm", perm);
+
             }
             catch (Exception)
             {
