@@ -135,8 +135,8 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Statistics2.aspx.cs">
-      <DependentUpon>Statistics2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Statistics2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Statistics2.aspx.designer.cs">
       <DependentUpon>Statistics2.aspx</DependentUpon>
