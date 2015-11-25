@@ -100,15 +100,20 @@ namespace LeisnerWebApplication
 
             if (rdToiletVisit.SelectedIndex == 0)
             {
-                toiletVisit = 1;
+                toiletVisit = 0;
                 ToiletVisitStr = toiletVisit.ToString();
             }
             else if (rdToiletVisit.SelectedIndex == 1)
             {
-                toiletVisit = 2;
+                toiletVisit = 1;
                 ToiletVisitStr = toiletVisit.ToString();
             }
             else if (rdToiletVisit.SelectedIndex == 2)
+            {
+                toiletVisit = 2;
+                ToiletVisitStr = toiletVisit.ToString();
+            }
+            else if (rdToiletVisit.SelectedIndex == 3)
             {
                 toiletVisit = 3;
                 ToiletVisitStr = toiletVisit.ToString();
