@@ -14,7 +14,7 @@ namespace LeisnerWebApplication
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Perm"] == "0")
+            if ((int)Session["Perm"] == 0)
             {
                 IDBox.Enabled = false;
                 IDBox.Text = Session["UserID"].ToString();

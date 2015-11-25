@@ -91,8 +91,8 @@ namespace BWS_ASP
         }
 
         public int getUserIDFromUsername(string username)
-        {   
-            
+        {
+            userID = 0;
 
             trans = new Transaction();
             trans.BegindTransactions();
@@ -103,11 +103,22 @@ namespace BWS_ASP
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
-                
+                cmd.Parameters.Add(new SqlParameter("@UserID", 1));
 
-                SqlDataReader rdr = cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
 
-                userID = (int)rdr["UserID"];
+                userID = (int)cmd.Parameters["@UserID"].Value;
+
+                //SqlDataReader rdr = cmd.ExecuteReader();
+
+                //rdr = cmd.ExecuteReader();
+                //while (rdr.Read() == true)
+                //{
+                //    if (rdr.HasRows)
+                //    {
+                //        userID = (int)rdr["UserID"];
+                //    }
+                //}
                     
                 
             }
@@ -122,6 +133,8 @@ namespace BWS_ASP
             trans.getcon().Close();
             return userID;
         }
+
+        public SqlDataReader rbr { get; set; }
     }
 
 }

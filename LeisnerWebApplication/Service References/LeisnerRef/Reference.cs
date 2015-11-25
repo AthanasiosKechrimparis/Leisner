@@ -174,6 +174,12 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/ReadAccidents", ReplyAction="http://tempuri.org/IBWSService/ReadAccidentsResponse")]
         System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.AccidentDTO[]> ReadAccidentsAsync(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/getIDFromUsername", ReplyAction="http://tempuri.org/IBWSService/getIDFromUsernameResponse")]
+        int getIDFromUsername(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/getIDFromUsername", ReplyAction="http://tempuri.org/IBWSService/getIDFromUsernameResponse")]
+        System.Threading.Tasks.Task<int> getIDFromUsernameAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -273,6 +279,14 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.AccidentDTO[]> ReadAccidentsAsync(int UserID) {
             return base.Channel.ReadAccidentsAsync(UserID);
+        }
+        
+        public int getIDFromUsername(string username) {
+            return base.Channel.getIDFromUsername(username);
+        }
+        
+        public System.Threading.Tasks.Task<int> getIDFromUsernameAsync(string username) {
+            return base.Channel.getIDFromUsernameAsync(username);
         }
     }
 }
