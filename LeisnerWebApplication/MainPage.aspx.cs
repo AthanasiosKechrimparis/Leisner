@@ -49,7 +49,8 @@ namespace LeisnerWebApplication
                 {
                     Response.Redirect("UserPage.aspx");
                 }
-                
+                int userID = cli.getIDFromUsername(txtb_Username.Text);
+                Session.Add("UserID", userID);
                 Session.Add("Perm", perm);
             }
             catch (Exception)
