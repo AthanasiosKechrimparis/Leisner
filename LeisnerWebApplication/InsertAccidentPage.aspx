@@ -111,11 +111,12 @@
             <br />
         </div>
         <div>
-            <strong>Toilet Visit :</strong>
+            <strong>Toilet Visit during the night :</strong>
             <asp:RadioButtonList ID="rdToiletVisit" runat="server" style="font-weight: 700" RepeatDirection="Horizontal">
-                <asp:ListItem Text="1" Value="0"></asp:ListItem>
-                <asp:ListItem Text="2" Value="1"></asp:ListItem>
-                <asp:ListItem Text="3" Value="2"></asp:ListItem>
+                <asp:ListItem Text="0" Value="0"></asp:ListItem>
+                <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                <asp:ListItem Text="3" Value="3"></asp:ListItem>
             </asp:RadioButtonList>
             <br />
         </div>
