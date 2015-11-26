@@ -91,18 +91,10 @@ namespace LeisnerWebApplication
         {
             DateTime date = DateTime.Parse(txtb_Date.Text);
 
-            //foreach(Accident a in listofAccidents)
-            //{
-            //    if (a.AccidentID == int.Parse(txtb_AccidentID.Text))
-            //    {
-            //        a.Amount = int.Parse(txtb_Amount.Text);
-            //        a.Date = date;
-            //        a.DeviceID = int.Parse(txtb_DeviceID.Text);
-            //    }
-            //}
+            
 
             cli.UpdateAccident(int.Parse(txtb_AccidentID.Text), int.Parse(txtb_Amount.Text), date, int.Parse(txtb_DeviceID.Text));
-
+            GetAccidents();
             lbl_Status.Text = "Status: Update Successful";
         }
 

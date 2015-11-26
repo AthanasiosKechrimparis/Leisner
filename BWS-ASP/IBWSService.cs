@@ -15,6 +15,8 @@ namespace BWS_ASP
         public DateTime Date { get; set; }
         public int DeviceID { get; set; }
         public int ST { get; set; }
+
+        public int Version { get; set; }
    
        
 

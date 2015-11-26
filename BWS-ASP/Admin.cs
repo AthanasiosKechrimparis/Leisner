@@ -105,6 +105,8 @@ namespace BWS_ASP
             Transaction trans;
             SqlCommand cmd;
 
+            int versionCheck = getVersion(accID);
+
             trans = new Transaction();
             
             trans.BegindTransactions();
@@ -118,9 +120,7 @@ namespace BWS_ASP
                 cmd.Parameters.Add(new SqlParameter("@Amount", amount));
                 cmd.Parameters.Add(new SqlParameter("@TimeOfAccident", time));
                 cmd.Parameters.Add(new SqlParameter("@DeviceID", DeviceID));
-
-
-                
+                cmd.Parameters.Add(new SqlParameter("@versionCheck", versionCheck));
 
                 cmd.ExecuteNonQuery();
             }
@@ -202,9 +202,45 @@ namespace BWS_ASP
             trans.getcon().Close();
             return tempList;
 
+        }
+
+        public int getVersion(int accID)
+        {
+            trans = new Transaction();
+            trans.BegindTransactions();
+            SqlDataReader dbr;
+            int version = 0;
+            try
+            {
+                cmd = new SqlCommand("getVersion", trans.getcon(), trans.GetTransaction());
+
+                cmd.CommandType = CommandType.StoredProcedure;
 
 
-            
+                cmd.Parameters.Add(new SqlParameter("@AccidentID", accID));
+
+                cmd.ExecuteNonQuery();
+
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read() == true)
+                {
+                    if (dbr.HasRows)
+                    {
+                        version = (int)dbr["Version"];
+
+                    }
+
+                }
+                dbr.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            trans.getcon().Close();
+            return version;
+
         }
     }
 }
