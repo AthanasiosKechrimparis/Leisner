@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.DataVisualization.Charting;
 
-namespace Statistics
+namespace BWS_ASP
 {
 
     public partial class Default : System.Web.UI.Page

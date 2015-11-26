@@ -10,6 +10,7 @@ namespace BWS_ASP
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     public class BWSService : IBWSService
     {
+        
         private List<Accident> listofAccidents;
         private object _lock;
         LogIn Log;
@@ -51,6 +52,15 @@ namespace BWS_ASP
 
             return listOfAccidentDTO;
         }
+        public List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, int DeviceNr)
+        {
+            
+        
+            Statistics stat = new Statistics();
+            return stat.getAccidentDaysFromDB(selectStart, selectEnd, DeviceNr);
+            
+        
+        }
 
      
         public int logIn(string username, string password)
@@ -71,7 +81,7 @@ namespace BWS_ASP
             DateTime D2 = new DateTime();
             D2 = enddate;
 
-                List<Accident> listofAccidents = ST.GetStatisticsFromDB(ID, D1, D2);
+                List<Accident> listofAccidents = ST.getFromDB(ID, D1, D2);
                 return GetAccidents(listofAccidents);
         }
 
@@ -107,6 +117,8 @@ namespace BWS_ASP
            
         }
 
+
+
         public void RegisterAccident(int deviceNR, int amount, DateTime timeOfAccident, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit)
         {
             dev = new Device(deviceNR);
@@ -120,6 +132,11 @@ namespace BWS_ASP
             return log.getUserIDFromUsername(username);
         }
 
+        
+
+
     }
 }
+
+
 
