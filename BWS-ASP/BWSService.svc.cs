@@ -16,6 +16,7 @@ namespace BWS_ASP
         LogIn Log;
         Admin admin;
         Device dev;
+        Statistics stat;
 
         public BWSService()
         {
@@ -54,12 +55,12 @@ namespace BWS_ASP
         }
         public List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, int DeviceNr)
         {
-            
-        
-            Statistics stat = new Statistics();
+
+
+            stat = new Statistics();
             return stat.getAccidentDaysFromDB(selectStart, selectEnd, DeviceNr);
-            
-        
+
+
         }
 
      

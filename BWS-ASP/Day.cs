@@ -5,6 +5,7 @@ using System.Web;
 
 namespace BWS_ASP
 {
+    [Serializable]
     public class Day
     {
         public DateTime Date { get; set; }
@@ -12,11 +13,11 @@ namespace BWS_ASP
 
         public int Average { get; set; }
 
-        public Day(DateTime Date, int AccidentsNumber, int Average)
+        public Day(DateTime Date, int AccidentsNumber)
         {
             this.Date = Date;
             this.AccidentsNumber = AccidentsNumber;
-            this.Average = Average;
+            //this.Average = Average;
         }
     }
 }
