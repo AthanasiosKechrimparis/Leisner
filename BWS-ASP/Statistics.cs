@@ -35,7 +35,7 @@ namespace BWS_ASP
         }
 
 
-        public List<Day> getFromDB()
+        public List<Day> getFromDB(int id, DateTime startdate, DateTime enddate)
         {
             Starttime = startdate;
             EndTime = enddate;
@@ -76,7 +76,7 @@ namespace BWS_ASP
                 while (rdr.HasRows && rdr.Read())
                 {
                    // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
-                    Day A = new Accident(int.Parse(rdr["AccidentID"].ToString()), int.Parse(rdr["Amount"].ToString()),  DateTime.Parse(rdr["TimeOfAccident"].ToString()), new Device(int.Parse(rdr["DeviceID"].ToString()), User));
+                    Accident A = new Accident(int.Parse(rdr["AccidentID"].ToString()), int.Parse(rdr["Amount"].ToString()),  DateTime.Parse(rdr["TimeOfAccident"].ToString()), new Device(int.Parse(rdr["DeviceID"].ToString()), User));
                     tempList.Add(A);
                     return dayAccidents;
                 }
