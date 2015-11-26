@@ -30,6 +30,9 @@ namespace BWS_ASP
         [DataMember]
         public int ST { get; set; }
 
+         [DataMember]
+        public int Version { get; set; }
+
         public Accident(int AccID, int amount, DateTime timeof, Device device)
         {
             this.AccidentID = AccID;
