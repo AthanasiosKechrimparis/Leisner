@@ -188,6 +188,7 @@ namespace BWS_ASP
                 {
                    
                     Accident A = new Accident(int.Parse(rdr["AccidentID"].ToString()), int.Parse(rdr["Amount"].ToString()), DateTime.Parse(rdr["TimeOfAccident"].ToString()), new Device(int.Parse(rdr["DeviceID"].ToString()), User));
+                    A.Version = int.Parse(rdr["Version"].ToString());
                     tempList.Add(A);
                 }
             }
