@@ -16,7 +16,7 @@ namespace BWS_ASP
         public int DeviceID { get; set; }
         public int ST { get; set; }
 
-        public int Version { get; set; }
+       // public int Version { get; set; }
    
        
 

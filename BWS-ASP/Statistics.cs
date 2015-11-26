@@ -35,12 +35,12 @@ namespace BWS_ASP
         }
 
 
-        public List<Day> getFromDB(int id, DateTime startdate, DateTime enddate)
+        public List<Accident> getFromDB(int id, DateTime startdate, DateTime enddate)
         {
             Starttime = startdate;
             EndTime = enddate;
             ID = id;
-            getFromDB();
+            //getFromDB();
 
             int compare = tempList[0].Amount;
 
@@ -60,35 +60,36 @@ namespace BWS_ASP
         {
             
 
-            trans = new Transaction();
-            trans.BegindTransactions();
-            try
-            {
-                cmd = new SqlCommand("nrOfAccident", trans.getcon(), trans.GetTransaction());
+        //    trans = new Transaction();
+        //    trans.BegindTransactions();
+        //    try
+        //    {
+        //        cmd = new SqlCommand("nrOfAccident", trans.getcon(), trans.GetTransaction());
 
-                cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new SqlParameter("@StartDate", selectStart));
-                cmd.Parameters.Add(new SqlParameter("@EndDate", selectEnd));
-                cmd.Parameters.Add(new SqlParameter("@UserID", DeviceID));
+        //        cmd.Parameters.Add(new SqlParameter("@StartDate", selectStart));
+        //        cmd.Parameters.Add(new SqlParameter("@EndDate", selectEnd));
+        //        cmd.Parameters.Add(new SqlParameter("@UserID", DeviceID));
 
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.HasRows && rdr.Read())
-                {
-                   // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
-                    Accident A = new Accident(int.Parse(rdr["AccidentID"].ToString()), int.Parse(rdr["Amount"].ToString()),  DateTime.Parse(rdr["TimeOfAccident"].ToString()), new Device(int.Parse(rdr["DeviceID"].ToString()), User));
-                    tempList.Add(A);
-                    return dayAccidents;
-                }
-            }
-            catch (Exception e)
-            {
-                trans.RollBack();
-                throw e;
-               // trans.getcon().Close();
-            }
-            //trans.Commit();
-            trans.getcon().Close();
+        //        SqlDataReader rdr = cmd.ExecuteReader();
+        //        while (rdr.HasRows && rdr.Read())
+        //        {
+        //           // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
+        //            Day A = new Day(int.Parse(rdr["AccidentID"].ToString()), int.Parse(rdr["Amount"].ToString()),  DateTime.Parse(rdr["TimeOfAccident"].ToString()), new Device(int.Parse(rdr["DeviceID"].ToString()), User));
+        //            dayAccidents.Add(A);
+                    
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        trans.RollBack();
+        //        throw e;
+        //       // trans.getcon().Close();
+        //    }
+        //    //trans.Commit();
+        //    trans.getcon().Close();
+            return dayAccidents;
         }
     }
 }
