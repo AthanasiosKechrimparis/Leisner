@@ -12,7 +12,7 @@ namespace BWS_ASP
         public int AccidentsNumber { get; set; }
 
         public int Average { get; set; }
-
+        //TEST
         public Day(DateTime Date, int AccidentsNumber)
         {
             this.Date = Date;
