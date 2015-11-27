@@ -97,5 +97,10 @@ namespace BWS_ASP
             i = i / accidentlist.Count();
             return i;
         }
+         public Accident()
+        {
+
+        }
     }
+
 }

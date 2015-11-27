@@ -599,6 +599,12 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetListByDay", ReplyAction="http://tempuri.org/IBWSService/GetListByDayResponse")]
         System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, string DeviceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/AverageAmount", ReplyAction="http://tempuri.org/IBWSService/AverageAmountResponse")]
+        int AverageAmount(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/AverageAmount", ReplyAction="http://tempuri.org/IBWSService/AverageAmountResponse")]
+        System.Threading.Tasks.Task<int> AverageAmountAsync(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -730,6 +736,14 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, string DeviceID) {
             return base.Channel.GetListByDayAsync(Date, DeviceID);
+        }
+        
+        public int AverageAmount(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist) {
+            return base.Channel.AverageAmount(accidentlist);
+        }
+        
+        public System.Threading.Tasks.Task<int> AverageAmountAsync(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist) {
+            return base.Channel.AverageAmountAsync(accidentlist);
         }
     }
 }

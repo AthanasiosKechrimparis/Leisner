@@ -143,7 +143,11 @@ namespace BWS_ASP
             return log.getUserIDFromUsername(username);
         }
 
-        
+        public int AverageAmount(List<Accident> accidentlist)
+        {
+            Accident acc = new Accident();
+            return acc.GetAverage(accidentlist);
+        }
 
 
     }
