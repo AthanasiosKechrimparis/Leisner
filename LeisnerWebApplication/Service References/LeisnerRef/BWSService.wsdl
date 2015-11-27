@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:4264/BWSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BWS_ASP" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IBWSService_ShowGraph_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowGraph" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_ShowGraph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowGraphResponse" />
+  </wsdl:message>
   <wsdl:message name="IBWSService_Dowork_InputMessage">
     <wsdl:part name="parameters" element="tns:Dowork" />
   </wsdl:message>
@@ -74,6 +80,10 @@
     <wsdl:part name="parameters" element="tns:GetDayAccidentsResponse" />
   </wsdl:message>
   <wsdl:portType name="IBWSService">
+    <wsdl:operation name="ShowGraph">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/ShowGraph" message="tns:IBWSService_ShowGraph_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/ShowGraphResponse" message="tns:IBWSService_ShowGraph_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Dowork">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/Dowork" message="tns:IBWSService_Dowork_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/DoworkResponse" message="tns:IBWSService_Dowork_OutputMessage" />
@@ -121,6 +131,15 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBWSService" type="tns:IBWSService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ShowGraph">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/ShowGraph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Dowork">
       <soap:operation soapAction="http://tempuri.org/IBWSService/Dowork" style="document" />
       <wsdl:input>

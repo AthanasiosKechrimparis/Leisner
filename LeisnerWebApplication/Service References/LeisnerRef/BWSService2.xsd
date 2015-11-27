@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BWS_ASP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BWS_ASP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Day" nillable="true" type="tns:Day" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDay" nillable="true" type="tns:ArrayOfDay" />
+  <xs:complexType name="Day">
+    <xs:sequence>
+      <xs:element name="_x003C_AccidentsNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Average_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Date_x003E_k__BackingField" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Day" nillable="true" type="tns:Day" />
   <xs:complexType name="ArrayOfAccidentDTO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AccidentDTO" nillable="true" type="tns:AccidentDTO" />
@@ -16,18 +30,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AccidentDTO" nillable="true" type="tns:AccidentDTO" />
-  <xs:complexType name="ArrayOfDay">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Day" nillable="true" type="tns:Day" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDay" nillable="true" type="tns:ArrayOfDay" />
-  <xs:complexType name="Day">
-    <xs:sequence>
-      <xs:element name="_x003C_AccidentsNumber_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Average_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Date_x003E_k__BackingField" type="xs:dateTime" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Day" nillable="true" type="tns:Day" />
 </xs:schema>

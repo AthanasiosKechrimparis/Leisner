@@ -15,6 +15,80 @@ namespace LeisnerWebApplication.LeisnerRef {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Day", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
+    [System.SerializableAttribute()]
+    public partial class Day : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int AccidentsNumberk__BackingFieldField;
+        
+        private int Averagek__BackingFieldField;
+        
+        private System.DateTime Datek__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<AccidentsNumber>k__BackingField", IsRequired=true)]
+        public int AccidentsNumberk__BackingField {
+            get {
+                return this.AccidentsNumberk__BackingFieldField;
+            }
+            set {
+                if ((this.AccidentsNumberk__BackingFieldField.Equals(value) != true)) {
+                    this.AccidentsNumberk__BackingFieldField = value;
+                    this.RaisePropertyChanged("AccidentsNumberk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Average>k__BackingField", IsRequired=true)]
+        public int Averagek__BackingField {
+            get {
+                return this.Averagek__BackingFieldField;
+            }
+            set {
+                if ((this.Averagek__BackingFieldField.Equals(value) != true)) {
+                    this.Averagek__BackingFieldField = value;
+                    this.RaisePropertyChanged("Averagek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Date>k__BackingField", IsRequired=true)]
+        public System.DateTime Datek__BackingField {
+            get {
+                return this.Datek__BackingFieldField;
+            }
+            set {
+                if ((this.Datek__BackingFieldField.Equals(value) != true)) {
+                    this.Datek__BackingFieldField = value;
+                    this.RaisePropertyChanged("Datek__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AccidentDTO", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
     [System.SerializableAttribute()]
     public partial class AccidentDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -117,83 +191,15 @@ namespace LeisnerWebApplication.LeisnerRef {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Day", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
-    [System.SerializableAttribute()]
-    public partial class Day : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int AccidentsNumberk__BackingFieldField;
-        
-        private int Averagek__BackingFieldField;
-        
-        private System.DateTime Datek__BackingFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<AccidentsNumber>k__BackingField", IsRequired=true)]
-        public int AccidentsNumberk__BackingField {
-            get {
-                return this.AccidentsNumberk__BackingFieldField;
-            }
-            set {
-                if ((this.AccidentsNumberk__BackingFieldField.Equals(value) != true)) {
-                    this.AccidentsNumberk__BackingFieldField = value;
-                    this.RaisePropertyChanged("AccidentsNumberk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Average>k__BackingField", IsRequired=true)]
-        public int Averagek__BackingField {
-            get {
-                return this.Averagek__BackingFieldField;
-            }
-            set {
-                if ((this.Averagek__BackingFieldField.Equals(value) != true)) {
-                    this.Averagek__BackingFieldField = value;
-                    this.RaisePropertyChanged("Averagek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<Date>k__BackingField", IsRequired=true)]
-        public System.DateTime Datek__BackingField {
-            get {
-                return this.Datek__BackingFieldField;
-            }
-            set {
-                if ((this.Datek__BackingFieldField.Equals(value) != true)) {
-                    this.Datek__BackingFieldField = value;
-                    this.RaisePropertyChanged("Datek__BackingField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LeisnerRef.IBWSService")]
     public interface IBWSService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/ShowGraph", ReplyAction="http://tempuri.org/IBWSService/ShowGraphResponse")]
+        void ShowGraph(LeisnerWebApplication.LeisnerRef.Day[] Days);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/ShowGraph", ReplyAction="http://tempuri.org/IBWSService/ShowGraphResponse")]
+        System.Threading.Tasks.Task ShowGraphAsync(LeisnerWebApplication.LeisnerRef.Day[] Days);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/Dowork", ReplyAction="http://tempuri.org/IBWSService/DoworkResponse")]
         void Dowork();
@@ -256,10 +262,10 @@ namespace LeisnerWebApplication.LeisnerRef {
         System.Threading.Tasks.Task<int> getIDFromUsernameAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetDayAccidents", ReplyAction="http://tempuri.org/IBWSService/GetDayAccidentsResponse")]
-        LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr);
+        LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetDayAccidents", ReplyAction="http://tempuri.org/IBWSService/GetDayAccidentsResponse")]
-        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr);
+        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -287,6 +293,14 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         public BWSServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public void ShowGraph(LeisnerWebApplication.LeisnerRef.Day[] Days) {
+            base.Channel.ShowGraph(Days);
+        }
+        
+        public System.Threading.Tasks.Task ShowGraphAsync(LeisnerWebApplication.LeisnerRef.Day[] Days) {
+            return base.Channel.ShowGraphAsync(Days);
         }
         
         public void Dowork() {
@@ -369,11 +383,11 @@ namespace LeisnerWebApplication.LeisnerRef {
             return base.Channel.getIDFromUsernameAsync(username);
         }
         
-        public LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr) {
+        public LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr) {
             return base.Channel.GetDayAccidents(selectStart, selectEnd, DeviceNr);
         }
         
-        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr) {
+        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr) {
             return base.Channel.GetDayAccidentsAsync(selectStart, selectEnd, DeviceNr);
         }
     }

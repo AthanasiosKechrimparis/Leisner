@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Statistics2.aspx.cs" Inherits="BWS_ASP.Default" %><%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Statistics2.aspx.cs" Inherits="LeisnerWebApplication.Default" %><%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 
 <!DOCTYPE html>
 
@@ -14,7 +14,10 @@
             display: inline-block;
             margin-left: 20px;
         }
-        
+        .inlineBlock4 {
+            display: inline-block;
+            margin-left: 120px;
+        }
         
         .auto-style1 {
             width: 252px;
@@ -85,7 +88,8 @@
         <table style="width:100%;">
             <tr>
                 <td class="auto-style11">
-            <asp:Button ID="GetDataBtn" runat="server" Text="Get Data" OnClick="GetDataBtn_Click" />
+                    <asp:Label ID="Label3" runat="server" Text="ID: "></asp:Label>
+                    <asp:TextBox ID="IDBox" runat="server" CssClass="inlineBlock" Width="133px"></asp:TextBox>
                 </td>
                 <td class="auto-style12">
                     <asp:Label ID="Label1" runat="server" CssClass="inlineBlockTop" Text="Start Date"></asp:Label>
@@ -99,10 +103,7 @@
             <tr>
                 <td class="auto-style14">
                     <asp:Panel ID="Panel1" runat="server" CssClass="inlineBlockTop"  Height="52px">
-                        <asp:RadioButtonList ID="RadioButtonList2" CssClass="inlineBlockTop" runat="server" OnSelectedIndexChanged="RadioButtonList2_SelectedIndexChanged">
-                            <asp:ListItem Text="One Day" Value="0"></asp:ListItem>
-                            <asp:ListItem Text="Multiple Days" Value="1"></asp:ListItem>
-                        </asp:RadioButtonList>
+                        <asp:Button ID="GetDataBtn" runat="server" OnClick="GetDataBtn_Click" Text="Get Data" />
                     </asp:Panel>
                 </td>
                 <td class="auto-style15">

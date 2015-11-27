@@ -26,6 +26,8 @@ namespace BWS_ASP
     public interface IBWSService
     {
         [OperationContract]
+        void ShowGraph(List<Day> Days);
+        [OperationContract]
         void Dowork();
         [OperationContract]
         void RegisterAccident(int deviceNR, int amount, DateTime timeOfAccident,int Drinks,DateTime TimeSleep,DateTime TimeToilet,int ToiletVisit);
@@ -54,7 +56,10 @@ namespace BWS_ASP
         int getIDFromUsername(string username);
 
         [OperationContract]
-        List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, int DeviceNr);
+        List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, string DeviceNr);
+
+        [OperationContract]
+        List<Accident> GetListByDay(DateTime Date, string DeviceID);
 
     }
 }

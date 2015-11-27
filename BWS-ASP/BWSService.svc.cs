@@ -53,7 +53,7 @@ namespace BWS_ASP
 
             return listOfAccidentDTO;
         }
-        public List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, int DeviceNr)
+        public List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, string DeviceNr)
         {
 
 
@@ -63,7 +63,11 @@ namespace BWS_ASP
 
         }
 
-     
+        public List<Accident> GetListByDay(DateTime Date, string DeviceID)
+        {
+            Statistics stat1 = new Statistics();
+           return stat.getListByDateFromDB(Date, DeviceID);
+        }
         public int logIn(string username, string password)
         {
             int returner;
@@ -85,7 +89,11 @@ namespace BWS_ASP
                 List<Accident> listofAccidents = ST.getFromDB(ID, D1, D2);
                 return GetAccidents(listofAccidents);
         }
-
+        public void ShowGraph(List<Day> Days)
+        {
+            Statistics stats = new Statistics();
+            stats.GraphStat(Days);
+        }
         public void RegisterDevice(int userID)
         {
             admin = new Admin();

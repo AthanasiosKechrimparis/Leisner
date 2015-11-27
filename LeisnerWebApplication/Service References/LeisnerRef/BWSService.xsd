@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:4264/BWSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BWS_ASP" />
+  <xs:element name="ShowGraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="Days" nillable="true" type="q1:ArrayOfDay" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowGraphResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Dowork">
     <xs:complexType>
       <xs:sequence />
@@ -41,7 +53,7 @@
   <xs:element name="GetSatisticBasedOnUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="GetSatisticBasedOnUserResult" nillable="true" type="q1:ArrayOfAccidentDTO" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="GetSatisticBasedOnUserResult" nillable="true" type="q2:ArrayOfAccidentDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -126,7 +138,7 @@
   <xs:element name="ReadAccidentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="ReadAccidentsResult" nillable="true" type="q2:ArrayOfAccidentDTO" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="ReadAccidentsResult" nillable="true" type="q3:ArrayOfAccidentDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -149,14 +161,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="selectStart" type="xs:dateTime" />
         <xs:element minOccurs="0" name="selectEnd" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="DeviceNr" type="xs:int" />
+        <xs:element minOccurs="0" name="DeviceNr" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDayAccidentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="GetDayAccidentsResult" nillable="true" type="q3:ArrayOfDay" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BWS_ASP" minOccurs="0" name="GetDayAccidentsResult" nillable="true" type="q4:ArrayOfDay" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

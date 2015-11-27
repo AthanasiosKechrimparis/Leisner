@@ -8,7 +8,15 @@ namespace BWS_ASP
 {
      [Serializable]
     public class Accident
-    {
+     {
+         [DataMember]
+         public DateTime StartDate
+         {
+             get;
+             set;
+         }
+    
+
          [DataMember]
         public int AccidentID { get; set; }
         [DataMember]
@@ -63,7 +71,36 @@ namespace BWS_ASP
             this.ToiletVisit = ToiletVisit;
             this.Version = Version;
         }
-
-
+         public Accident(DateTime StartDate, DateTime TimeOfAccident, DateTime TimeSleep, int sizeOfAccident, int ToiletVisit, int Drinks, int AccidentID)
+        {
+            this.StartDate = StartDate;
+            this.TimeOfAccident = TimeOfAccident;
+            this.TimeSleep = TimeSleep;
+            this.Amount = Amount;
+            this.ToiletVisit = ToiletVisit;
+            this.Drinks = Drinks;
+            this.AccidentID = AccidentID;
+        }
+         public Accident(DateTime TimeOfAccident, int Amount, int Drinks, DateTime TimeSleep, int ToiletVisit)
+         {
+             this.TimeOfAccident = TimeOfAccident;
+             this.Amount = Amount;
+             this.Drinks = Drinks;
+             this.TimeSleep = TimeSleep;
+             
+             this.ToiletVisit = ToiletVisit;
+             
+         }
+         public int GetAverage(List<Accident> accidentlist)
+         {
+             
+             int i = 0;
+             foreach (Accident a in accidentlist)
+             {
+                 i = i + a.Amount;
+             }
+             i = i / accidentlist.Count();
+             return i;
+         }
     }
 }

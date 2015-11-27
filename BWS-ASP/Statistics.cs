@@ -57,10 +57,21 @@ namespace BWS_ASP
 
             return tempList;
         }
-
-        public List<Day> getAccidentDaysFromDB(DateTime selectStart, DateTime selectEnd, int DeviceID)
+        public void GraphStat(List<Day> Days)
         {
-            dayAccidents = new List<Day>();
+            List<DateTime> xDates = new List<DateTime>();
+            List<int> ySizes = new List<int>();
+            foreach (Day a in Days)
+            {
+                xDates.Add(a.Date);
+                xDates.OrderByDescending(d => d.Date);
+                ySizes.Add(a.Average);
+            }
+            
+        }
+        public List<Day> getAccidentDaysFromDB(DateTime selectStart, DateTime selectEnd, string DeviceID)
+        {
+            List<Day> dayAccidents = new List<Day>();
 
             trans = new Transaction();
             trans.BegindTransactions();
@@ -80,6 +91,41 @@ namespace BWS_ASP
                     // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
                     Day A = new Day(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse(rdr["NrOfAccident"].ToString()));
                     dayAccidents.Add(A);
+
+                }
+            }
+            catch (Exception e)
+            {
+                trans.RollBack();
+                throw e;
+                // trans.getcon().Close();
+            }
+            //trans.Commit();
+            trans.getcon().Close();
+            return dayAccidents;
+        }
+        public List<Accident> getListByDateFromDB(DateTime Date, string DeviceID)
+        {
+            List<Accident> dayAccidents = new List<Accident>();
+
+            trans = new Transaction();
+            trans.BegindTransactions();
+            try
+            {
+                cmd = new SqlCommand("SELECT * FROM BedWA WHERE Date = @TimeOfAccident AND DeviceID = @UserID", trans.getcon(), trans.GetTransaction());
+
+                cmd.CommandType = CommandType.Text;
+
+                cmd.Parameters.Add(new SqlParameter("@TimeOfAccident", Date));
+                
+                cmd.Parameters.Add(new SqlParameter("@UserID", DeviceID));
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.HasRows && rdr.Read())
+                {
+                    // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
+                    Accident acc = new Accident(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse((rdr["Amount"]).ToString()),int.Parse((rdr["Drinks"]).ToString()),DateTime.Parse((rdr["TimeSleep"]).ToString()),int.Parse((rdr["ToiletVisit"]).ToString()));
+                    dayAccidents.Add(acc);
 
                 }
             }
