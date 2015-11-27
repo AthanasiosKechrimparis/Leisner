@@ -31,8 +31,8 @@ namespace LeisnerWebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            txtStartDate.Text = String.Empty;
-            txtEndDate.Text = String.Empty;
+            txtStartDate.Text = Calendar1.SelectedDate.ToShortDateString();
+            txtEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
             Chart1.Visible = false;
             if (!IsPostBack)
             {
@@ -40,7 +40,7 @@ namespace LeisnerWebApplication
                 txtEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
                 Chart1.Visible = false;
 
-                ButtonStuff();
+                
             }
 
         }
@@ -105,17 +105,17 @@ namespace LeisnerWebApplication
         public void ButtonStuff()
         {
             ClearViews();
-
+            string DeviceID = IDBox.Text;
             selectStart = Calendar1.SelectedDate;
             selectEnd = Calendar2.SelectedDate;
 
 
-            string DeviceNr = IDBox.Text;
-            BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr);
+            
+            BWS.GetDayAccidents(selectStart, selectEnd, DeviceID);
 
             Chart1.Visible = true;
 
-
+            
             ListView1.DataSource = days;
             ListView1.DataBind();
 
