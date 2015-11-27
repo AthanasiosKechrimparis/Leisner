@@ -63,10 +63,12 @@ namespace BWS_ASP
 
         }
 
-        public List<Accident> GetListByDay(DateTime StartDate, string DeviceID)
+        public List<Accident> GetListByDay(DateTime Date, string DeviceID)
         {
+            //List<Accident> L1 = new List<Accident>();
+            //return L1;
             Statistics stat1 = new Statistics();
-           return stat.getListByDateFromDB(StartDate, DeviceID);
+            return stat.getListByDateFromDB(Date, DeviceID);
         }
         public int logIn(string username, string password)
         {
@@ -141,13 +143,7 @@ namespace BWS_ASP
             return log.getUserIDFromUsername(username);
         }
 
-        public int AverageAmount(List<Accident> accidentlist)
-    {
-        Accident acc = new Accident();
-        return acc.GetAverage(accidentlist);
         
-        
-    }
 
 
     }

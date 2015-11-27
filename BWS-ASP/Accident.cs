@@ -10,12 +10,7 @@ namespace BWS_ASP
     public class Accident
      {
          [DataMember]
-         public DateTime StartDate
-         {
-             get;
-             set;
-         }
-    
+         public DateTime StartDate{ get; set; }  
 
          [DataMember]
         public int AccidentID { get; set; }
@@ -33,11 +28,10 @@ namespace BWS_ASP
          public int ToiletVisit { get; set; }
          [DataMember]
          public int Version { get; set; }
-        [DataMember]
-        public Device dev { get; set; }
+         [DataMember]
+         public Device dev { get; set; }
         [DataMember]
         public int ST { get; set; }
-        
 
         public Accident(int AccID, int amount, DateTime timeof, Device device)
         {
@@ -52,12 +46,12 @@ namespace BWS_ASP
             this.AccidentID = AccID;
             this.TimeOfAccident = timeof;
             this.Amount = amount;
-            
+
         }
 
 
         public Accident(DateTime timeof, int amount, Device device)
-        {           
+        {
             this.TimeOfAccident = timeof;
             this.Amount = amount;
             this.dev = device;
@@ -72,7 +66,7 @@ namespace BWS_ASP
             this.ToiletVisit = ToiletVisit;
             this.Version = Version;
         }
-         public Accident(DateTime StartDate, DateTime TimeOfAccident, DateTime TimeSleep, int sizeOfAccident, int ToiletVisit, int Drinks, int AccidentID)
+        public Accident(DateTime StartDate, DateTime TimeOfAccident, DateTime TimeSleep, int sizeOfAccident, int ToiletVisit, int Drinks, int AccidentID)
         {
             this.StartDate = StartDate;
             this.TimeOfAccident = TimeOfAccident;
@@ -82,30 +76,26 @@ namespace BWS_ASP
             this.Drinks = Drinks;
             this.AccidentID = AccidentID;
         }
-         public Accident(DateTime TimeOfAccident, int Amount, int Drinks, DateTime TimeSleep, int ToiletVisit)
-         {
-             this.TimeOfAccident = TimeOfAccident;
-             this.Amount = Amount;
-             this.Drinks = Drinks;
-             this.TimeSleep = TimeSleep;
-             
-             this.ToiletVisit = ToiletVisit;
-             
-         }
-         public int GetAverage(List<Accident> accidentlist)
-         {
-             
-             int i = 0;
-             foreach (Accident a in accidentlist)
-             {
-                 i = i + a.Amount;
-             }
-             i = i / accidentlist.Count();
-             return i;
-         }
-         public Accident()
-         {
+        public Accident(DateTime TimeOfAccident, int Amount, int Drinks, DateTime TimeSleep, int ToiletVisit)
+        {
+            this.TimeOfAccident = TimeOfAccident;
+            this.Amount = Amount;
+            this.Drinks = Drinks;
+            this.TimeSleep = TimeSleep;
 
-         }
+            this.ToiletVisit = ToiletVisit;
+
+        }
+        public int GetAverage(List<Accident> accidentlist)
+        {
+
+            int i = 0;
+            foreach (Accident a in accidentlist)
+            {
+                i = i + a.Amount;
+            }
+            i = i / accidentlist.Count();
+            return i;
+        }
     }
 }
