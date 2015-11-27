@@ -191,6 +191,333 @@ namespace LeisnerWebApplication.LeisnerRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Accident", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
+    [System.SerializableAttribute()]
+    public partial class Accident : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int AccidentIDk__BackingFieldField;
+        
+        private int Amountk__BackingFieldField;
+        
+        private int Drinksk__BackingFieldField;
+        
+        private int STk__BackingFieldField;
+        
+        private System.DateTime StartDatek__BackingFieldField;
+        
+        private System.DateTime TimeOfAccidentk__BackingFieldField;
+        
+        private System.DateTime TimeSleepk__BackingFieldField;
+        
+        private System.DateTime TimeToiletk__BackingFieldField;
+        
+        private int ToiletVisitk__BackingFieldField;
+        
+        private int Versionk__BackingFieldField;
+        
+        private LeisnerWebApplication.LeisnerRef.Device devk__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<AccidentID>k__BackingField", IsRequired=true)]
+        public int AccidentIDk__BackingField {
+            get {
+                return this.AccidentIDk__BackingFieldField;
+            }
+            set {
+                if ((this.AccidentIDk__BackingFieldField.Equals(value) != true)) {
+                    this.AccidentIDk__BackingFieldField = value;
+                    this.RaisePropertyChanged("AccidentIDk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Amount>k__BackingField", IsRequired=true)]
+        public int Amountk__BackingField {
+            get {
+                return this.Amountk__BackingFieldField;
+            }
+            set {
+                if ((this.Amountk__BackingFieldField.Equals(value) != true)) {
+                    this.Amountk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Amountk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Drinks>k__BackingField", IsRequired=true)]
+        public int Drinksk__BackingField {
+            get {
+                return this.Drinksk__BackingFieldField;
+            }
+            set {
+                if ((this.Drinksk__BackingFieldField.Equals(value) != true)) {
+                    this.Drinksk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Drinksk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<ST>k__BackingField", IsRequired=true)]
+        public int STk__BackingField {
+            get {
+                return this.STk__BackingFieldField;
+            }
+            set {
+                if ((this.STk__BackingFieldField.Equals(value) != true)) {
+                    this.STk__BackingFieldField = value;
+                    this.RaisePropertyChanged("STk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<StartDate>k__BackingField", IsRequired=true)]
+        public System.DateTime StartDatek__BackingField {
+            get {
+                return this.StartDatek__BackingFieldField;
+            }
+            set {
+                if ((this.StartDatek__BackingFieldField.Equals(value) != true)) {
+                    this.StartDatek__BackingFieldField = value;
+                    this.RaisePropertyChanged("StartDatek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<TimeOfAccident>k__BackingField", IsRequired=true)]
+        public System.DateTime TimeOfAccidentk__BackingField {
+            get {
+                return this.TimeOfAccidentk__BackingFieldField;
+            }
+            set {
+                if ((this.TimeOfAccidentk__BackingFieldField.Equals(value) != true)) {
+                    this.TimeOfAccidentk__BackingFieldField = value;
+                    this.RaisePropertyChanged("TimeOfAccidentk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<TimeSleep>k__BackingField", IsRequired=true)]
+        public System.DateTime TimeSleepk__BackingField {
+            get {
+                return this.TimeSleepk__BackingFieldField;
+            }
+            set {
+                if ((this.TimeSleepk__BackingFieldField.Equals(value) != true)) {
+                    this.TimeSleepk__BackingFieldField = value;
+                    this.RaisePropertyChanged("TimeSleepk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<TimeToilet>k__BackingField", IsRequired=true)]
+        public System.DateTime TimeToiletk__BackingField {
+            get {
+                return this.TimeToiletk__BackingFieldField;
+            }
+            set {
+                if ((this.TimeToiletk__BackingFieldField.Equals(value) != true)) {
+                    this.TimeToiletk__BackingFieldField = value;
+                    this.RaisePropertyChanged("TimeToiletk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<ToiletVisit>k__BackingField", IsRequired=true)]
+        public int ToiletVisitk__BackingField {
+            get {
+                return this.ToiletVisitk__BackingFieldField;
+            }
+            set {
+                if ((this.ToiletVisitk__BackingFieldField.Equals(value) != true)) {
+                    this.ToiletVisitk__BackingFieldField = value;
+                    this.RaisePropertyChanged("ToiletVisitk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Version>k__BackingField", IsRequired=true)]
+        public int Versionk__BackingField {
+            get {
+                return this.Versionk__BackingFieldField;
+            }
+            set {
+                if ((this.Versionk__BackingFieldField.Equals(value) != true)) {
+                    this.Versionk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Versionk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<dev>k__BackingField", IsRequired=true)]
+        public LeisnerWebApplication.LeisnerRef.Device devk__BackingField {
+            get {
+                return this.devk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.devk__BackingFieldField, value) != true)) {
+                    this.devk__BackingFieldField = value;
+                    this.RaisePropertyChanged("devk__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Device", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
+    [System.SerializableAttribute()]
+    public partial class Device : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int DeviceNumberk__BackingFieldField;
+        
+        private LeisnerWebApplication.LeisnerRef.Costumer Ownerk__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<DeviceNumber>k__BackingField", IsRequired=true)]
+        public int DeviceNumberk__BackingField {
+            get {
+                return this.DeviceNumberk__BackingFieldField;
+            }
+            set {
+                if ((this.DeviceNumberk__BackingFieldField.Equals(value) != true)) {
+                    this.DeviceNumberk__BackingFieldField = value;
+                    this.RaisePropertyChanged("DeviceNumberk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Owner>k__BackingField", IsRequired=true)]
+        public LeisnerWebApplication.LeisnerRef.Costumer Ownerk__BackingField {
+            get {
+                return this.Ownerk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Ownerk__BackingFieldField, value) != true)) {
+                    this.Ownerk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Ownerk__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Costumer", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
+    [System.SerializableAttribute()]
+    public partial class Costumer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int IDk__BackingFieldField;
+        
+        private string Namek__BackingFieldField;
+        
+        private string Typek__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<ID>k__BackingField", IsRequired=true)]
+        public int IDk__BackingField {
+            get {
+                return this.IDk__BackingFieldField;
+            }
+            set {
+                if ((this.IDk__BackingFieldField.Equals(value) != true)) {
+                    this.IDk__BackingFieldField = value;
+                    this.RaisePropertyChanged("IDk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Name>k__BackingField", IsRequired=true)]
+        public string Namek__BackingField {
+            get {
+                return this.Namek__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Namek__BackingFieldField, value) != true)) {
+                    this.Namek__BackingFieldField = value;
+                    this.RaisePropertyChanged("Namek__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Type>k__BackingField", IsRequired=true)]
+        public string Typek__BackingField {
+            get {
+                return this.Typek__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Typek__BackingFieldField, value) != true)) {
+                    this.Typek__BackingFieldField = value;
+                    this.RaisePropertyChanged("Typek__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LeisnerRef.IBWSService")]
     public interface IBWSService {
@@ -266,6 +593,12 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetDayAccidents", ReplyAction="http://tempuri.org/IBWSService/GetDayAccidentsResponse")]
         System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetListByDay", ReplyAction="http://tempuri.org/IBWSService/GetListByDayResponse")]
+        LeisnerWebApplication.LeisnerRef.Accident[] GetListByDay(System.DateTime Date, string DeviceID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetListByDay", ReplyAction="http://tempuri.org/IBWSService/GetListByDayResponse")]
+        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, string DeviceID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -389,6 +722,14 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr) {
             return base.Channel.GetDayAccidentsAsync(selectStart, selectEnd, DeviceNr);
+        }
+        
+        public LeisnerWebApplication.LeisnerRef.Accident[] GetListByDay(System.DateTime Date, string DeviceID) {
+            return base.Channel.GetListByDay(Date, DeviceID);
+        }
+        
+        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, string DeviceID) {
+            return base.Channel.GetListByDayAsync(Date, DeviceID);
         }
     }
 }

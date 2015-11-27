@@ -12,8 +12,10 @@ namespace BWS_ASP
     [Serializable]
     public class Statistics
     {
+
         private Transaction trans;
         private SqlCommand cmd;
+
         [DataMember]
         public DateTime Starttime { get; set; }
         [DataMember]
@@ -124,7 +126,7 @@ namespace BWS_ASP
                 while (rdr.HasRows && rdr.Read())
                 {
                     // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
-                    Accident acc = new Accident(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse((rdr["Amount"]).ToString()),int.Parse((rdr["Drinks"]).ToString()),DateTime.Parse((rdr["TimeSleep"]).ToString()),int.Parse((rdr["ToiletVisit"]).ToString()));
+                    Accident acc = new Accident(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse((rdr["Amount"]).ToString()), int.Parse((rdr["Drinks"]).ToString()), DateTime.Parse((rdr["TimeSleep"]).ToString()), int.Parse((rdr["ToiletVisit"]).ToString()));
                     dayAccidents.Add(acc);
 
                 }

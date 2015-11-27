@@ -79,6 +79,12 @@
   <wsdl:message name="IBWSService_GetDayAccidents_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDayAccidentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IBWSService_GetListByDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListByDay" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_GetListByDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListByDayResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBWSService">
     <wsdl:operation name="ShowGraph">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/ShowGraph" message="tns:IBWSService_ShowGraph_InputMessage" />
@@ -127,6 +133,10 @@
     <wsdl:operation name="GetDayAccidents">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/GetDayAccidents" message="tns:IBWSService_GetDayAccidents_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/GetDayAccidentsResponse" message="tns:IBWSService_GetDayAccidents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListByDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/GetListByDay" message="tns:IBWSService_GetListByDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/GetListByDayResponse" message="tns:IBWSService_GetListByDay_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBWSService" type="tns:IBWSService">
@@ -232,6 +242,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDayAccidents">
       <soap:operation soapAction="http://tempuri.org/IBWSService/GetDayAccidents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListByDay">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/GetListByDay" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
