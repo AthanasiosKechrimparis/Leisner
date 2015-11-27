@@ -104,9 +104,9 @@ namespace BWS_ASP
             trans.getcon().Close();
             return dayAccidents;
         }
-        public List<Accident> getListByDateFromDB(DateTime Date, string DeviceID)
+        public List<Accident> getListByDateFromDB(DateTime StartDate, string DeviceID)
         {
-            List<Accident> dayAccidents = new List<Accident>();
+            List<Accident> dayList = new List<Accident>();
 
             trans = new Transaction();
             trans.BegindTransactions();
@@ -116,7 +116,7 @@ namespace BWS_ASP
 
                 cmd.CommandType = CommandType.Text;
 
-                cmd.Parameters.Add(new SqlParameter("@TimeOfAccident", Date));
+                cmd.Parameters.Add(new SqlParameter("@TimeOfAccident", StartDate));
                 
                 cmd.Parameters.Add(new SqlParameter("@UserID", DeviceID));
 
@@ -125,7 +125,7 @@ namespace BWS_ASP
                 {
                     // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
                     Accident acc = new Accident(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse((rdr["Amount"]).ToString()),int.Parse((rdr["Drinks"]).ToString()),DateTime.Parse((rdr["TimeSleep"]).ToString()),int.Parse((rdr["ToiletVisit"]).ToString()));
-                    dayAccidents.Add(acc);
+                    dayList.Add(acc);
 
                 }
             }
@@ -137,7 +137,7 @@ namespace BWS_ASP
             }
             //trans.Commit();
             trans.getcon().Close();
-            return dayAccidents;
+            return dayList;
         }
     }
 }

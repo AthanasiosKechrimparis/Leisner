@@ -59,7 +59,10 @@ namespace BWS_ASP
         List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, string DeviceNr);
 
         [OperationContract]
-        List<Accident> GetListByDay(DateTime Date, string DeviceID);
+        List<Accident> GetListByDay(DateTime StartDate, string DeviceID);
+
+        [OperationContract]
+        int AverageAmount(List<Accident> accidentlist);
 
     }
 }

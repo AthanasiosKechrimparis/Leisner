@@ -75,6 +75,9 @@
     <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.Day.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.Accident.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\LeisnerRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

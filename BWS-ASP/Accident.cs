@@ -37,6 +37,7 @@ namespace BWS_ASP
         public Device dev { get; set; }
         [DataMember]
         public int ST { get; set; }
+        
 
         public Accident(int AccID, int amount, DateTime timeof, Device device)
         {
@@ -101,6 +102,10 @@ namespace BWS_ASP
              }
              i = i / accidentlist.Count();
              return i;
+         }
+         public Accident()
+         {
+
          }
     }
 }

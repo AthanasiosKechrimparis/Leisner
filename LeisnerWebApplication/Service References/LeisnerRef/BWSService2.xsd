@@ -30,4 +30,41 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AccidentDTO" nillable="true" type="tns:AccidentDTO" />
+  <xs:complexType name="ArrayOfAccident">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Accident" nillable="true" type="tns:Accident" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccident" nillable="true" type="tns:ArrayOfAccident" />
+  <xs:complexType name="Accident">
+    <xs:sequence>
+      <xs:element name="_x003C_AccidentID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Amount_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Drinks_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ST_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_StartDate_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_TimeOfAccident_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_TimeSleep_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_TimeToilet_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ToiletVisit_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Version_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_dev_x003E_k__BackingField" nillable="true" type="tns:Device" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Accident" nillable="true" type="tns:Accident" />
+  <xs:complexType name="Device">
+    <xs:sequence>
+      <xs:element name="_x003C_DeviceNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Owner_x003E_k__BackingField" nillable="true" type="tns:Costumer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Device" nillable="true" type="tns:Device" />
+  <xs:complexType name="Costumer">
+    <xs:sequence>
+      <xs:element name="_x003C_ID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Type_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Costumer" nillable="true" type="tns:Costumer" />
 </xs:schema>

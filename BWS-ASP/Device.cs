@@ -13,8 +13,8 @@ namespace BWS_ASP
     [Serializable]
     public class Device
     {
-        private Transaction trans;
-        private SqlCommand cmd;
+        //private Transaction trans;
+        //private SqlCommand cmd;
 
         [DataMember]
         public int DeviceNumber { get; set; }
