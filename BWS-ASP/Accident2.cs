@@ -2,47 +2,56 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Runtime.Serialization;
 
 namespace BWS_ASP
 {
+    [Serializable]
     public class Accident2
     {
+        [DataMember]
         public DateTime startDate
         {
             get;
             set;
         }
+        [DataMember]
         public DateTime endDate
         {
             get;
             set;
         }
+        [DataMember]
         public DateTime timeOfAccident
         {
             get;
             set;
         }
+        [DataMember]
         public DateTime bedTime
         {
             get;
             set;
         }
+        [DataMember]
         public int sizeOfAccident
         {
             get;
             set;
         }
+        [DataMember]
         public bool toiletVisit
         {
             get;
             set;
         }
+        [DataMember]
         public int drinksBeforeBed
         {
             get;
             set;
         }
-
+        [DataMember]
         public int AccidentID
         {
             get;
