@@ -518,6 +518,83 @@ namespace LeisnerWebApplication.LeisnerRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Message", Namespace="http://schemas.datacontract.org/2004/07/BWS_ASP")]
+    [System.SerializableAttribute()]
+    public partial class Message : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime SendDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private LeisnerWebApplication.LeisnerRef.Costumer UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MessageText {
+            get {
+                return this.MessageTextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageTextField, value) != true)) {
+                    this.MessageTextField = value;
+                    this.RaisePropertyChanged("MessageText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime SendDate {
+            get {
+                return this.SendDateField;
+            }
+            set {
+                if ((this.SendDateField.Equals(value) != true)) {
+                    this.SendDateField = value;
+                    this.RaisePropertyChanged("SendDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public LeisnerWebApplication.LeisnerRef.Costumer User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LeisnerRef.IBWSService")]
     public interface IBWSService {
@@ -605,6 +682,12 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/AverageAmount", ReplyAction="http://tempuri.org/IBWSService/AverageAmountResponse")]
         System.Threading.Tasks.Task<int> AverageAmountAsync(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetMessage", ReplyAction="http://tempuri.org/IBWSService/GetMessageResponse")]
+        LeisnerWebApplication.LeisnerRef.Message[] GetMessage(int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetMessage", ReplyAction="http://tempuri.org/IBWSService/GetMessageResponse")]
+        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Message[]> GetMessageAsync(int UserID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -744,6 +827,14 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         public System.Threading.Tasks.Task<int> AverageAmountAsync(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist) {
             return base.Channel.AverageAmountAsync(accidentlist);
+        }
+        
+        public LeisnerWebApplication.LeisnerRef.Message[] GetMessage(int UserID) {
+            return base.Channel.GetMessage(UserID);
+        }
+        
+        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Message[]> GetMessageAsync(int UserID) {
+            return base.Channel.GetMessageAsync(UserID);
         }
     }
 }

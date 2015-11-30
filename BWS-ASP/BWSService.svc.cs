@@ -150,6 +150,14 @@ namespace BWS_ASP
         }
 
 
+
+
+        public List<Message> GetMessage(int UserID)
+        {
+            Message mess = new Message();
+            List<Message> messList = mess.GetMessage(UserID);
+            return messList;
+        }
     }
 }
 
