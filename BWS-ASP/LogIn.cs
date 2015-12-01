@@ -113,18 +113,18 @@ namespace BWS_ASP
 
                 cmd.ExecuteNonQuery();
 
-                
 
-                //SqlDataReader rdr = cmd.ExecuteReader();
 
-                //rdr = cmd.ExecuteReader();
-                //while (rdr.Read() == true)
-                //{
-                //    if (rdr.HasRows)
-                //    {
-                //        userID = (int)rdr["UserID"];
-                //    }
-                //}
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read() == true)
+                {
+                    if (rdr.HasRows)
+                    {
+                        userID = (int)rdr["UserID"];
+                    }
+                }
                     
                 
             }
