@@ -589,16 +589,16 @@ namespace LeisnerWebApplication.LeisnerRef {
         System.Threading.Tasks.Task<int> getIDFromUsernameAsync(string username);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetDayAccidents", ReplyAction="http://tempuri.org/IBWSService/GetDayAccidentsResponse")]
-        LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr);
+        LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetDayAccidents", ReplyAction="http://tempuri.org/IBWSService/GetDayAccidentsResponse")]
-        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr);
+        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetListByDay", ReplyAction="http://tempuri.org/IBWSService/GetListByDayResponse")]
-        LeisnerWebApplication.LeisnerRef.Accident[] GetListByDay(System.DateTime Date, string DeviceID);
+        LeisnerWebApplication.LeisnerRef.Accident[] GetListByDay(System.DateTime Date, int DeviceNr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/GetListByDay", ReplyAction="http://tempuri.org/IBWSService/GetListByDayResponse")]
-        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, string DeviceID);
+        System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, int DeviceNr);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBWSService/AverageAmount", ReplyAction="http://tempuri.org/IBWSService/AverageAmountResponse")]
         int AverageAmount(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist);
@@ -722,20 +722,20 @@ namespace LeisnerWebApplication.LeisnerRef {
             return base.Channel.getIDFromUsernameAsync(username);
         }
         
-        public LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr) {
+        public LeisnerWebApplication.LeisnerRef.Day[] GetDayAccidents(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr) {
             return base.Channel.GetDayAccidents(selectStart, selectEnd, DeviceNr);
         }
         
-        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, string DeviceNr) {
+        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Day[]> GetDayAccidentsAsync(System.DateTime selectStart, System.DateTime selectEnd, int DeviceNr) {
             return base.Channel.GetDayAccidentsAsync(selectStart, selectEnd, DeviceNr);
         }
         
-        public LeisnerWebApplication.LeisnerRef.Accident[] GetListByDay(System.DateTime Date, string DeviceID) {
-            return base.Channel.GetListByDay(Date, DeviceID);
+        public LeisnerWebApplication.LeisnerRef.Accident[] GetListByDay(System.DateTime Date, int DeviceNr) {
+            return base.Channel.GetListByDay(Date, DeviceNr);
         }
         
-        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, string DeviceID) {
-            return base.Channel.GetListByDayAsync(Date, DeviceID);
+        public System.Threading.Tasks.Task<LeisnerWebApplication.LeisnerRef.Accident[]> GetListByDayAsync(System.DateTime Date, int DeviceNr) {
+            return base.Channel.GetListByDayAsync(Date, DeviceNr);
         }
         
         public int AverageAmount(LeisnerWebApplication.LeisnerRef.Accident[] accidentlist) {

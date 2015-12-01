@@ -13,8 +13,8 @@ namespace BWS_ASP
 
     public class Transaction
     {
-        
-        private const string CONNECTION_STRING = @"Server=msdb3.surftown.dk;" + "Database=mitoden_dbgr15;" + "User Id=mitoden_dbgr15;" + "Password=dmgruppebjbu;";
+
+        private const string CONNECTION_STRING = @"Server=msdb3.surftown.dk;" + "Database=mitoden_dbgr15;" + "User Id=mitoden_dbgr15;" + "Password=dmgruppebjbu;" + "MultipleActiveResultSets=True;";
         
         private SqlConnection con;
        
