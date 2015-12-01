@@ -21,6 +21,8 @@ namespace BWS_ASP
 
         [DataMember]
         public Costumer User { get; set; }
+        [DataMember]
+        public string Tittle { get; set; }
 
         List<Message> messageList = new List<Message>();
 
@@ -28,6 +30,7 @@ namespace BWS_ASP
         {
             this.MessageText = MessageText;
             this.SendDate = SendDate;
+            this.Tittle = Tittle;
         }
 
         public List<Message> GetMessage(int UserID)
@@ -51,7 +54,9 @@ namespace BWS_ASP
                     Message A = new Message();
                     A.MessageText = rdr["Message"].ToString();
                     A.SendDate = DateTime.Parse(rdr["sendDate"].ToString());
+                    A.Tittle = rdr["Tittle"].ToString();
                     A.User.Name = rdr["Name"].ToString();
+
                     messageList.Add(A);
                 }
             }
@@ -68,7 +73,41 @@ namespace BWS_ASP
 
         }
 
+        public void SendMessage(string Messagtxt, DateTime senddate, string Tittle, int UserID)
 
+        {
+            Transaction trans;
+            SqlCommand cmd;
 
+            trans = new Transaction();
+
+            trans.BegindTransactions();
+            int i = 101;
+            try
+            {
+                cmd = new SqlCommand("SendMessage", trans.getcon(), trans.GetTransaction());
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Message", Messagtxt));
+                cmd.Parameters.Add(new SqlParameter("@Tittle", Tittle));
+                cmd.Parameters.Add(new SqlParameter("@sendDate", senddate));
+                cmd.Parameters.Add(new SqlParameter("@UserID", UserID));
+
+                //cmd.Parameters.Add(new SqlParameter("@Version", (Version + 1)));
+
+                i = cmd.ExecuteNonQuery();
+                trans.Commit();
+
+            }
+            catch (Exception e)
+            {
+                trans.RollBack();
+                throw e;
+
+            }
+            //trans.Commit();
+
+        }
     }
 }

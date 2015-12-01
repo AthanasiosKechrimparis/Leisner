@@ -158,6 +158,12 @@ namespace BWS_ASP
             List<Message> messList = mess.GetMessage(UserID);
             return messList;
         }
+
+       
+        public void SendMessage(string Messagtxt, DateTime senddate, string Tittle, int UserID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
