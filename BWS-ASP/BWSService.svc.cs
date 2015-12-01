@@ -162,7 +162,8 @@ namespace BWS_ASP
        
         public void SendMessage(string Messagtxt, DateTime senddate, string Tittle, int UserID)
         {
-            throw new NotImplementedException();
+            Message mess = new Message();
+            mess.SendMessage(Messagtxt, senddate, Tittle, UserID);
         }
     }
 }

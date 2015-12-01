@@ -97,7 +97,7 @@ namespace BWS_ASP
                 //cmd.Parameters.Add(new SqlParameter("@Version", (Version + 1)));
 
                 i = cmd.ExecuteNonQuery();
-                trans.Commit();
+                //trans.Commit();
 
             }
             catch (Exception e)
@@ -106,7 +106,7 @@ namespace BWS_ASP
                 throw e;
 
             }
-            //trans.Commit();
+            trans.Commit();
 
         }
     }
