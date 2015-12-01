@@ -56,10 +56,10 @@ namespace BWS_ASP
         int getIDFromUsername(string username);
 
         [OperationContract]
-        List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, string DeviceNr);
+        List<Day> GetDayAccidents(DateTime selectStart, DateTime selectEnd, int DeviceNr);
 
         [OperationContract]
-        List<Accident> GetListByDay(DateTime Date, string DeviceID);
+        List<Accident> GetListByDay(DateTime Date, int DeviceNr);
 
         [OperationContract]
         int AverageAmount(List<Accident> accidentlist);

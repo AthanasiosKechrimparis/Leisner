@@ -71,7 +71,7 @@ namespace BWS_ASP
             }
             
         }
-        public List<Day> getAccidentDaysFromDB(DateTime selectStart, DateTime selectEnd, string DeviceID)
+        public List<Day> getAccidentDaysFromDB(DateTime selectStart, DateTime selectEnd, int DeviceNr)
         {
             List<Day> dayAccidents = new List<Day>();
 
@@ -82,31 +82,34 @@ namespace BWS_ASP
                 cmd = new SqlCommand("nrOfAccident", trans.getcon(), trans.GetTransaction());
 
                 cmd.CommandType = CommandType.StoredProcedure;
-
+                cmd.Parameters.Add(new SqlParameter("@DeviceID", DeviceNr));
                 cmd.Parameters.Add(new SqlParameter("@StartDate", selectStart));
                 cmd.Parameters.Add(new SqlParameter("@EndDate", selectEnd));
-                cmd.Parameters.Add(new SqlParameter("@UserID", DeviceID));
+                
 
                 SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.HasRows && rdr.Read())
+                while (rdr.Read())
                 {
                     // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
                     Day A = new Day(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse(rdr["NrOfAccident"].ToString()));
                     dayAccidents.Add(A);
 
                 }
+                rdr.Close();
             }
             catch (Exception e)
             {
-                trans.RollBack();
+                
+                //trans.RollBack();
                 throw e;
-                // trans.getcon().Close();
+                //trans.getcon().Close();
             }
             //trans.Commit();
+            
             trans.getcon().Close();
             return dayAccidents;
         }
-        public List<Accident> getListByDateFromDB(DateTime Date, string DeviceID)
+        public List<Accident> getListByDateFromDB(DateTime Date, int DeviceNr)
         {
             List<Accident> dayAccidents = new List<Accident>();
 
@@ -120,7 +123,7 @@ namespace BWS_ASP
 
                 cmd.Parameters.Add(new SqlParameter("@TimeOfAccident", Date));
                 
-                cmd.Parameters.Add(new SqlParameter("@UserID", DeviceID));
+                cmd.Parameters.Add(new SqlParameter("@UserID", DeviceNr));
 
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.HasRows && rdr.Read())

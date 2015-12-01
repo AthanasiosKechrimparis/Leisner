@@ -21,7 +21,7 @@ namespace BWS_ASP
         {
             this.Date = Date;
             this.AccidentsNumber = AccidentsNumber;
-            this.Average = Average;
+            //this.Average = Average;
         }
     }
 }

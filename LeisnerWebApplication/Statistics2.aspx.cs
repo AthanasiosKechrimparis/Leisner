@@ -25,17 +25,18 @@ namespace LeisnerWebApplication
         List<DateTime> xDates = new List<DateTime>();
         List<int> ySizes = new List<int>();
         public int numberOfAccidents { get; set; }
-
+        public int DeviceNr;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             txtStartDate.Text = Calendar1.SelectedDate.ToShortDateString();
             txtEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
             Chart1.Visible = false;
             if (!IsPostBack)
             {
+                
                 txtStartDate.Text = Calendar1.SelectedDate.ToShortDateString();
                 txtEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
                 Chart1.Visible = false;
@@ -52,7 +53,7 @@ namespace LeisnerWebApplication
 
         protected void GetDataBtn_Click(object sender, EventArgs e)
         {
-
+            
             ButtonStuff();
         }
 
@@ -92,31 +93,31 @@ namespace LeisnerWebApplication
 
         protected void Method(object sender, EventArgs e)
         {
-            string DeviceID = IDBox.Text;
+            DeviceNr = int.Parse(IDBox.Text);
             ButtonStuff();
             
 
-            ListView2.DataSource = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceID);
+            ListView2.DataSource = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceNr);
             ListView2.DataBind();
-            ListView3.DataSource = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceID);
+            ListView3.DataSource = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceNr);
             ListView3.DataBind();
         }
 
         public void ButtonStuff()
         {
             ClearViews();
-            string DeviceID = IDBox.Text;
+            DeviceNr = int.Parse(IDBox.Text);
             selectStart = Calendar1.SelectedDate;
             selectEnd = Calendar2.SelectedDate;
 
 
             
-            BWS.GetDayAccidents(selectStart, selectEnd, DeviceID);
+            BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr);
 
             Chart1.Visible = true;
 
-            
-            ListView1.DataSource = days;
+
+            ListView1.DataSource = BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr);
             ListView1.DataBind();
 
         }
