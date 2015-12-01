@@ -35,12 +35,12 @@ namespace BWS_ASP
         public void RegisterAccident( int amount, DateTime time, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit )
         {
             Transaction trans;
-            SqlCommand cmd;
-            
+            SqlCommand cmd;            
 
              trans = new Transaction();
              
              trans.BegindTransactions();
+             int i = 101;
             try
             {
                 cmd = new SqlCommand("RegisterBWAcc", trans.getcon(), trans.GetTransaction());
@@ -56,7 +56,8 @@ namespace BWS_ASP
                 cmd.Parameters.Add(new SqlParameter("@Toilet", ToiletVisit));
                 //cmd.Parameters.Add(new SqlParameter("@Version", (Version + 1)));
 
-                cmd.ExecuteNonQuery();
+                i = cmd.ExecuteNonQuery();
+                trans.Commit();
 
             }
             catch (Exception e)
@@ -65,7 +66,7 @@ namespace BWS_ASP
                 throw e;
 
             }
-            trans.Commit();
+            //trans.Commit();
 
         }
 

@@ -60,10 +60,10 @@ namespace LeisnerWebApplication
 
 
             DateTime date = new DateTime();
-            string CustomDate = Calendar1.SelectedDate.ToString("dd/MM/yyyy") + " " + txtHour.Text + ":" + txtMinute.Text;
+            string CustomDate = Calendar1.SelectedDate.ToString("dd-MM-yyyy") + " " + txtHour.Text + ":" + txtMinute.Text;
 
-            string SleepDate = Calendar1.SelectedDate.ToString("dd/MM/yyyy") + " " + txttimeSleep.Text + ":" + txtminutesleep.Text;
-            string ToiletDate = Calendar1.SelectedDate.ToString("dd/MM/yyyy") + " " + txthoursToilet.Text + ":" + txtminutesToilet.Text;
+            string SleepDate = Calendar1.SelectedDate.ToString("dd-MM-yyyy") + " " + txttimeSleep.Text + ":" + txtminutesleep.Text;
+            string ToiletDate = Calendar1.SelectedDate.ToString("dd-MM-yyyy") + " " + txthoursToilet.Text + ":" + txtminutesToilet.Text;
             DateTime sleepDate = new DateTime();
             DateTime toiletDate = new DateTime();
 
@@ -74,23 +74,23 @@ namespace LeisnerWebApplication
                 date = DateTime.Now;
                 DateSleepStr = date.ToString();
 
-                string NowDateSleep = date.ToString("dd/MM/yyyy") + " " + txttimeSleep.Text + ":" + txtminutesleep.Text;
-                sleepDate = DateTime.ParseExact(NowDateSleep, "dd/MM/yyyy H:m", CultureInfo.InvariantCulture);
+                string NowDateSleep = date.ToString("dd-MM-yyyy") + " " + txttimeSleep.Text + ":" + txtminutesleep.Text;
+                sleepDate = DateTime.ParseExact(NowDateSleep, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
                 SleepDateStr = sleepDate.ToString();
 
-                string HourToilet = date.ToString("dd/MM/yyyy") + " " + txthoursToilet.Text + ":" + txtminutesToilet.Text;
-                toiletDate = DateTime.ParseExact(HourToilet, "dd/MM/yyyy H:m", CultureInfo.InvariantCulture);
+                string HourToilet = date.ToString("dd-MM-yyyy") + " " + txthoursToilet.Text + ":" + txtminutesToilet.Text;
+                toiletDate = DateTime.ParseExact(HourToilet, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
                 toiletDateStr = toiletDate.ToString();
             }
             if (rdbListDate.SelectedIndex == 1)
             {
-                date = DateTime.ParseExact(CustomDate, "dd/MM/yyyy H:m", CultureInfo.InvariantCulture);
+                date = DateTime.ParseExact(CustomDate, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
                 DateSleepStr = date.ToString();
 
-                sleepDate = DateTime.ParseExact(SleepDate, "dd/MM/yyyy H:m", CultureInfo.InvariantCulture);
+                sleepDate = DateTime.ParseExact(SleepDate, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
                 SleepDateStr = sleepDate.ToString();
 
-                toiletDate = DateTime.ParseExact(ToiletDate, "dd/MM/yyyy H:m", CultureInfo.InvariantCulture);
+                toiletDate = DateTime.ParseExact(ToiletDate, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
                 toiletDateStr = toiletDate.ToString();
             }
 
