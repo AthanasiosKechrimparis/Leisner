@@ -19,7 +19,7 @@ namespace LeisnerWebApplication
             {
                 if (perm == 3)
                 {
-                    lbl_Status.Text = "Login Failed";
+                    //lbl_Status.Text = "Login Failed";
                     txtb_Password.Text = "";
                     txtb_Username.Text = "";
                 }
