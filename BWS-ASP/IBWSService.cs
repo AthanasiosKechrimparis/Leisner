@@ -64,5 +64,8 @@ namespace BWS_ASP
         [OperationContract]
         int AverageAmount(List<Accident> accidentlist);
 
+        [OperationContract]
+        List<Message> GetMessage(int UserID);
+
     }
 }

@@ -51,6 +51,8 @@ namespace BWS_ASP
                     Perm = (int)dbr["TypeOfUser"];
                 }
             }
+            dbr.Close();
+            trans.Commit();
             trans.GetConnection().Close();
             return Perm;
         }
@@ -92,10 +94,11 @@ namespace BWS_ASP
 
         public int getUserIDFromUsername(string username)
         {
-            userID = 0;
+            int userID = 0;
 
             trans = new Transaction();
             trans.BegindTransactions();
+
             try
             {
                 cmd = new SqlCommand("getIDfromUsername", trans.getcon(), trans.GetTransaction());
@@ -104,27 +107,16 @@ namespace BWS_ASP
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
 
-                SqlParameter paramUserID = new SqlParameter("@UserID", 0);
-                paramUserID.Direction = ParameterDirection.Output;
-
-                cmd.Parameters.Add(paramUserID);
-
-                userID = (int)cmd.Parameters["@UserID"].Value;
-
-                cmd.ExecuteNonQuery();
-
-                
-
-                //SqlDataReader rdr = cmd.ExecuteReader();
-
-                //rdr = cmd.ExecuteReader();
-                //while (rdr.Read() == true)
-                //{
-                //    if (rdr.HasRows)
-                //    {
-                //        userID = (int)rdr["UserID"];
-                //    }
-                //}
+                SqlDataReader dbr;
+                dbr = cmd.ExecuteReader();
+                while (dbr.Read() == true)
+                {
+                    if (dbr.HasRows)
+                    {
+                        userID = (int)dbr["UserID"];
+                    }
+                }
+                dbr.Close();
                     
                 
             }
@@ -135,7 +127,7 @@ namespace BWS_ASP
                 // trans.getcon().Close();
             }
             
-            //trans.Commit();
+            trans.Commit();
             trans.getcon().Close();
             return userID;
         }

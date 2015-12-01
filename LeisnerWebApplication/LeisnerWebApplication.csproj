@@ -69,13 +69,17 @@
     <None Include="Service References\LeisnerRef\BWSService.disco" />
     <None Include="Service References\LeisnerRef\configuration91.svcinfo" />
     <None Include="Service References\LeisnerRef\configuration.svcinfo" />
+    <Content Include="ReceiveMessagesPage.aspx" />
     <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.AccidentDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.Accident.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.Day.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.Accident.datasource">
+    <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.Message.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\LeisnerRef\Reference.svcmap">
@@ -133,6 +137,13 @@
       <DependentUpon>ManageAccidents.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiveMessagesPage.aspx.cs">
+      <DependentUpon>ReceiveMessagesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceiveMessagesPage.aspx.designer.cs">
+      <DependentUpon>ReceiveMessagesPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\LeisnerRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

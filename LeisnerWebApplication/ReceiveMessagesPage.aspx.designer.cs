@@ -10,7 +10,7 @@
 namespace LeisnerWebApplication {
     
     
-    public partial class MainPage {
+    public partial class ReceiveMessagesPage {
         
         /// <summary>
         /// form1 control.
@@ -22,48 +22,39 @@ namespace LeisnerWebApplication {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lbl_Username control.
+        /// ListView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Username;
+        protected global::System.Web.UI.WebControls.ListView ListView2;
         
         /// <summary>
-        /// txtb_Username control.
+        /// ObjectDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtb_Username;
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
         
         /// <summary>
-        /// lbl_Password control.
+        /// btnShow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Password;
+        protected global::System.Web.UI.WebControls.Button btnShow;
         
         /// <summary>
-        /// txtb_Password control.
+        /// ddList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtb_Password;
-        
-        /// <summary>
-        /// btn_Login control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Login;
+        protected global::System.Web.UI.WebControls.DropDownList ddList;
     }
 }

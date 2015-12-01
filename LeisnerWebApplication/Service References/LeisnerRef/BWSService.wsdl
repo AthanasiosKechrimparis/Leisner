@@ -91,6 +91,12 @@
   <wsdl:message name="IBWSService_AverageAmount_OutputMessage">
     <wsdl:part name="parameters" element="tns:AverageAmountResponse" />
   </wsdl:message>
+  <wsdl:message name="IBWSService_GetMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_GetMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBWSService">
     <wsdl:operation name="ShowGraph">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/ShowGraph" message="tns:IBWSService_ShowGraph_InputMessage" />
@@ -147,6 +153,10 @@
     <wsdl:operation name="AverageAmount">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/AverageAmount" message="tns:IBWSService_AverageAmount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/AverageAmountResponse" message="tns:IBWSService_AverageAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/GetMessage" message="tns:IBWSService_GetMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/GetMessageResponse" message="tns:IBWSService_GetMessage_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBWSService" type="tns:IBWSService">
@@ -270,6 +280,15 @@
     </wsdl:operation>
     <wsdl:operation name="AverageAmount">
       <soap:operation soapAction="http://tempuri.org/IBWSService/AverageAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/GetMessage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -46,7 +46,7 @@
                 </td>
                 <td class="auto-style2">
 
-                    <asp:Button ID="btn_Messages" runat="server" Text="Messages" />
+                    <asp:Button ID="btn_Messages" runat="server" Text="Messages" OnClick="btn_Messages_Click" />
 
                 </td>
             </tr>
