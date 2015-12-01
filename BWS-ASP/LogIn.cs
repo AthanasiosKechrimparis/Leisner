@@ -28,6 +28,7 @@ namespace BWS_ASP
             this.UserName = UserName;
             this.PassWord = PassWord;
             this.Permision = Permision;
+            this.userID = 0;
         }
 
 
@@ -92,7 +93,7 @@ namespace BWS_ASP
 
         public int getUserIDFromUsername(string username)
         {
-            userID = 0;
+            //userID = 0;
 
             trans = new Transaction();
             trans.BegindTransactions();
@@ -104,27 +105,26 @@ namespace BWS_ASP
 
                 cmd.Parameters.Add(new SqlParameter("@Username", username));
 
-                SqlParameter paramUserID = new SqlParameter("@UserID", 0);
-                paramUserID.Direction = ParameterDirection.Output;
+                //SqlParameter paramUserID = new SqlParameter("@UserID", 0);
+                //paramUserID.Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add(paramUserID);
 
-                cmd.Parameters.Add(paramUserID);
-
-                userID = (int)cmd.Parameters["@UserID"].Value;
+                //userID = (int)cmd.Parameters["@UserID"].Value;
 
                 cmd.ExecuteNonQuery();
 
-                
+                //userID = (int)cmd.Parameters["UserID"].Value;
 
-                //SqlDataReader rdr = cmd.ExecuteReader();
+                SqlDataReader rdr = cmd.ExecuteReader();
 
-                //rdr = cmd.ExecuteReader();
-                //while (rdr.Read() == true)
-                //{
-                //    if (rdr.HasRows)
-                //    {
-                //        userID = (int)rdr["UserID"];
-                //    }
-                //}
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read() == true)
+                {
+                    if (rdr.HasRows)
+                    {
+                        userID = (int)rdr["UserID"];
+                    }
+                }
                     
                 
             }
