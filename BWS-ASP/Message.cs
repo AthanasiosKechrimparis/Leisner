@@ -24,12 +24,12 @@ namespace BWS_ASP
         [DataMember]
         public string Tittle { get; set; }
 
-        List<Message> messageList = new List<Message>();
+        List<Message> messageList;
 
         public Message()
         {
             this.MessageText = MessageText;
-            this.SendDate = SendDate;
+            this.SendDate = DateTime.Now;
             this.Tittle = Tittle;
         }
 
@@ -82,7 +82,7 @@ namespace BWS_ASP
             trans = new Transaction();
 
             trans.BegindTransactions();
-            int i = 101;
+            //int i = 101;
             try
             {
                 cmd = new SqlCommand("SendMessage", trans.getcon(), trans.GetTransaction());
@@ -90,14 +90,14 @@ namespace BWS_ASP
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(new SqlParameter("@Message", Messagtxt));
-                cmd.Parameters.Add(new SqlParameter("@Tittle", Tittle));
                 cmd.Parameters.Add(new SqlParameter("@sendDate", senddate));
+                cmd.Parameters.Add(new SqlParameter("@Tittle", Tittle));
                 cmd.Parameters.Add(new SqlParameter("@UserID", UserID));
 
                 //cmd.Parameters.Add(new SqlParameter("@Version", (Version + 1)));
 
-                i = cmd.ExecuteNonQuery();
-                //trans.Commit();
+                cmd.ExecuteNonQuery();
+                trans.Commit();
 
             }
             catch (Exception e)
@@ -106,7 +106,7 @@ namespace BWS_ASP
                 throw e;
 
             }
-            trans.Commit();
+            //trans.Commit();
 
         }
     }
