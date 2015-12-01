@@ -105,6 +105,8 @@ namespace LeisnerWebApplication
 
         public void ButtonStuff()
         {
+            
+
             ClearViews();
             DeviceNr = int.Parse(IDBox.Text);
             selectStart = Calendar1.SelectedDate;
