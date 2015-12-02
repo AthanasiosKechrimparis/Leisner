@@ -16,7 +16,7 @@
             <br />
             <asp:Button ID="btn_ManageAccident" runat="server" OnClick="btn_ManageAccident_Click" Text="Manage Accidents" />
             <br />
-            <asp:Button ID="btn_Messages" runat="server" Text="Messages" />
+            <asp:Button ID="btn_Messages" runat="server" Text="Messages" OnClick="btn_Messages_Click" />
         </div>
     </form>
 </body>

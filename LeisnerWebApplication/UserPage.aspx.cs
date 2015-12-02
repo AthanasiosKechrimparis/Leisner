@@ -28,5 +28,10 @@ namespace LeisnerWebApplication
         {
             Response.Redirect("ManageAccidents.aspx");
         }
+
+        protected void btn_Messages_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("sendMessage.aspx");
+        }
     }
 }
