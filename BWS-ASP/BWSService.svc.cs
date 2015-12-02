@@ -62,13 +62,13 @@ namespace BWS_ASP
 
 
         }
-
+       
         public List<Accident> GetListByDay(DateTime Date, int DeviceNr)
         {
             //List<Accident> L1 = new List<Accident>();
             //return L1;
             Statistics stat1 = new Statistics();
-            return stat.getListByDateFromDB(Date, DeviceNr);
+            return stat1.getListByDateFromDB(Date, DeviceNr);
         }
         public int logIn(string username, string password)
         {

@@ -67,5 +67,7 @@ namespace BWS_ASP
         [OperationContract]
         List<Message> GetMessage(int UserID);
 
+        
+
     }
 }

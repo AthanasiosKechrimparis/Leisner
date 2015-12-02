@@ -93,33 +93,48 @@ namespace LeisnerWebApplication
 
         protected void Method(object sender, EventArgs e)
         {
+            
             DeviceNr = int.Parse(IDBox.Text);
             ButtonStuff();
-            
+            List<LeisnerRef.Accident> accidentlist = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceNr).ToList();
+            List<Accident> newaccidentlist = new List<Accident>();
+            foreach (LeisnerRef.Accident a in accidentlist)
+            {
+                Accident acc = new Accident(a.AccidentIDk__BackingField, a.Amountk__BackingField,a.TimeOfAccidentk__BackingField,a.Devicek__BackingField, a.Drinksk__BackingField, a.TimeSleepk__BackingField,a.TimeToiletk__BackingField, a.ToiletVisitk__BackingField, a.Versionk__BackingField);
+                newaccidentlist.Add(acc);
+            }
 
-            ListView2.DataSource = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceNr);
+            ListView2.DataSource = newaccidentlist;
             ListView2.DataBind();
-            ListView3.DataSource = BWS.GetListByDay(DateTime.Parse((sender as LinkButton).CommandArgument), DeviceNr);
+            ListView3.DataSource = newaccidentlist;
             ListView3.DataBind();
         }
 
         public void ButtonStuff()
         {
-            
 
+            
             ClearViews();
             DeviceNr = int.Parse(IDBox.Text);
             selectStart = Calendar1.SelectedDate;
             selectEnd = Calendar2.SelectedDate;
-
+            
+            List<LeisnerRef.Day> dayslist = BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr).ToList();
+            List<Day> newdaylist = new List<Day>();
+            foreach (LeisnerRef.Day d in dayslist)
+            {
+                Day day = new Day(d.Datek__BackingField, d.AccidentsNumberk__BackingField, d.Averagek__BackingField);
+                newdaylist.Add(day);
+            }
+            BWS.ShowGraph(dayslist);
+            
 
             
-            BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr);
 
             Chart1.Visible = true;
 
 
-            ListView1.DataSource = BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr);
+            ListView1.DataSource = newdaylist;
             ListView1.DataBind();
 
         }

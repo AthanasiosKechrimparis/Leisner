@@ -204,6 +204,8 @@ namespace LeisnerWebApplication.LeisnerRef {
         
         private int Amountk__BackingFieldField;
         
+        private int Devicek__BackingFieldField;
+        
         private int Drinksk__BackingFieldField;
         
         private int STk__BackingFieldField;
@@ -254,6 +256,19 @@ namespace LeisnerWebApplication.LeisnerRef {
                 if ((this.Amountk__BackingFieldField.Equals(value) != true)) {
                     this.Amountk__BackingFieldField = value;
                     this.RaisePropertyChanged("Amountk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Device>k__BackingField", IsRequired=true)]
+        public int Devicek__BackingField {
+            get {
+                return this.Devicek__BackingFieldField;
+            }
+            set {
+                if ((this.Devicek__BackingFieldField.Equals(value) != true)) {
+                    this.Devicek__BackingFieldField = value;
+                    this.RaisePropertyChanged("Devicek__BackingField");
                 }
             }
         }

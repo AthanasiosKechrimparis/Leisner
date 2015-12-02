@@ -115,6 +115,7 @@
     <Compile Include="CreateUserPage.aspx.designer.cs">
       <DependentUpon>CreateUserPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Day.cs" />
     <Compile Include="InsertAccidentPage.aspx.cs">
       <DependentUpon>InsertAccidentPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

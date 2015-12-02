@@ -10,8 +10,9 @@ namespace BWS_ASP
     public class Accident
      {
          [DataMember]
-         public DateTime StartDate{ get; set; }  
-
+         public DateTime StartDate{ get; set; }
+         [DataMember]
+         public int Device { get; set; }
          [DataMember]
         public int AccidentID { get; set; }
         [DataMember]
@@ -56,8 +57,9 @@ namespace BWS_ASP
             this.Amount = amount;
             this.dev = device;
         }
-        public Accident(DateTime TimeOfAccident, int Amount, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit, int Version)
+        public Accident(int AccidentID, int Amount, DateTime TimeOfAccident, int Device, int Drinks, DateTime TimeSleep, DateTime TimeToilet, int ToiletVisit, int Version)
         {
+            this.AccidentID = AccidentID;
             this.TimeOfAccident = TimeOfAccident;
             this.Amount = Amount;
             this.Drinks = Drinks;
@@ -91,6 +93,7 @@ namespace BWS_ASP
 
             int i = 0;
             foreach (Accident a in accidentlist)
+                
             {
                 i = i + a.Amount;
             }
@@ -101,6 +104,11 @@ namespace BWS_ASP
         {
 
         }
+
+         public Accident(int Amount)
+         {
+             this.Amount = Amount;
+         }
     }
 
 }
