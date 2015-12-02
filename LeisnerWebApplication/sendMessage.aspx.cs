@@ -14,14 +14,14 @@ namespace LeisnerWebApplication
         BWSServiceClient bedW = new BWSServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-           // Label1.Text = (string)Session["UserID"];
+           Label1.Text = Session["UserID"].ToString();
     
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             //  string subject = TextBox1.Text;
-            int UserID = 5;        //(int)Session["UserID"];
+            int UserID = (int)Session["UserID"];
             DateTime date = DateTime.Now;
           //  string nme = Session["usrnme"].ToString();
             string areaTxt = TextArea1.InnerText;

@@ -42,8 +42,9 @@ namespace LeisnerWebApplication
             {
                 int perm = cli.logIn(txtb_Username.Text, txtb_Password.Text);
                 int userID = cli.getIDFromUsername(txtb_Username.Text);
-                Session.Add("UserID", userID);
-                Session.Add("Perm", perm);
+              //  Session.Add("UserID", userID);
+                Session["UserID"] = userID;
+                //Session.Add("Perm", perm);
 
                 if (perm == 1)
                 {

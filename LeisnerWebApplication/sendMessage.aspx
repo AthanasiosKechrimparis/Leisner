@@ -16,7 +16,7 @@
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
-            choice reciver:</p>
+            &nbsp;</p>
         <p>
             &nbsp;</p>
         <p>
