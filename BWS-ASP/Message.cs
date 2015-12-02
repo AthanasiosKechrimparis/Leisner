@@ -29,13 +29,24 @@ namespace BWS_ASP
         public Message()
         {
             this.MessageText = MessageText;
-            this.SendDate = DateTime.Now;
+            this.SendDate = SendDate;
             this.Tittle = Tittle;
+            this.User = User;
+        }
+
+        public Message(string MessageText, DateTime SendDate, string Tittle, Costumer User)
+        {
+            // TODO: Complete member initialization
+            this.MessageText = MessageText;
+            this.SendDate = SendDate;
+            this.Tittle = Tittle;
+            this.User = User;
+            //this.User = User;
         }
 
         public List<Message> GetMessage(int UserID)
         {
-
+            
             trans = new Transaction();
             trans.BegindTransactions();
             try
@@ -50,14 +61,15 @@ namespace BWS_ASP
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.HasRows && rdr.Read())
                 {
-
-                    Message A = new Message();
-                    A.MessageText = rdr["Message"].ToString();
-                    A.SendDate = DateTime.Parse(rdr["sendDate"].ToString());
-                    A.Tittle = rdr["Tittle"].ToString();
-                    A.User.Name = rdr["Name"].ToString();
+                    messageList = new List<Message>();
+                    Message A = new Message(rdr["Message"].ToString(), DateTime.Parse(rdr["sendDate"].ToString()), rdr["Tittle"].ToString(), new Costumer(rdr["Name"].ToString()));
+                    //A.MessageText = rdr["Message"].ToString();
+                    //A.SendDate = DateTime.Parse(rdr["sendDate"].ToString());
+                    //A.Tittle = rdr["Tittle"].ToString();
+                    //A.User.Name = rdr["Name"].ToString();
 
                     messageList.Add(A);
+                   
                 }
             }
             catch (Exception e)
@@ -67,7 +79,7 @@ namespace BWS_ASP
 
             }
 
-
+            //trans.Commit();
             trans.getcon().Close();
             return messageList;
 
