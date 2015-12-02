@@ -40,6 +40,7 @@
     <xs:sequence>
       <xs:element name="_x003C_AccidentID_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_Amount_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Device_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_Drinks_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_ST_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_StartDate_x003E_k__BackingField" type="xs:dateTime" />

@@ -17,11 +17,11 @@ namespace BWS_ASP
 
         public int Average { get; set; }
         //TEST
-        public Day(DateTime Date, int AccidentsNumber)
+        public Day(DateTime Date, int AccidentsNumber, int Average)
         {
             this.Date = Date;
             this.AccidentsNumber = AccidentsNumber;
-            //this.Average = Average;
+            this.Average = Average;
         }
     }
 }

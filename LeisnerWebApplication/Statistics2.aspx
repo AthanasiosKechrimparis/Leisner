@@ -211,7 +211,7 @@
                         <asp:Label ID="Time" runat="server" Text='<%# Eval("timeOfAccident") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="Size" runat="server" Text='<%# Eval("sizeOfAccident") %>' />
+                        <asp:Label ID="Size" runat="server" Text='<%# Eval("Amount") %>' />
                     </td>
                     
                 </tr>
@@ -250,13 +250,13 @@
                 <tr style="">
                     
                     <td>
-                        <asp:Label ID="BedTime" runat="server"  Text='<%# Eval("bedTime") %>' />
+                        <asp:Label ID="TimeSleep" runat="server"  Text='<%# Eval("TimeSleep") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="ToiletVisit" runat="server" Text='<%# Eval("toiletVisit") %>' />
+                        <asp:Label ID="ToiletVisit" runat="server" Text='<%# Eval("ToiletVisit") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="Drinks" runat="server" Text='<%# Eval("drinksBeforeBed") %>' />
+                        <asp:Label ID="Drinks" runat="server" Text='<%# Eval("Drinks") %>' />
                     </td>
                     
                 </tr>

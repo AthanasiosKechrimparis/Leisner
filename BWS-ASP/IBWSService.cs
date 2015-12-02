@@ -69,5 +69,7 @@ namespace BWS_ASP
         [OperationContract]
         void SendMessage(string Messagtxt, DateTime senddate, string Tittle, int UserID);
 
+        
+
     }
 }

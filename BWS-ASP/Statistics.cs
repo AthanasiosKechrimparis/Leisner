@@ -91,7 +91,7 @@ namespace BWS_ASP
                 while (rdr.Read())
                 {
                     // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
-                    Day A = new Day(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse(rdr["NrOfAccident"].ToString()));
+                    Day A = new Day(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse(rdr["NrOfAccident"].ToString()),int.Parse(rdr["Average"].ToString()));
                     dayAccidents.Add(A);
 
                 }
@@ -109,27 +109,65 @@ namespace BWS_ASP
             trans.getcon().Close();
             return dayAccidents;
         }
-        public List<Accident> getListByDateFromDB(DateTime Date, int DeviceNr)
+        public List<Accident> getAverageFromDB(DateTime selectStart, DateTime selectEnd, int DeviceNr)
         {
-            List<Accident> dayAccidents = new List<Accident>();
+            List<Accident> averageAccidents = new List<Accident>();
 
             trans = new Transaction();
             trans.BegindTransactions();
             try
             {
-                cmd = new SqlCommand("SELECT * FROM BedWA WHERE Date = @TimeOfAccident AND DeviceID = @UserID", trans.getcon(), trans.GetTransaction());
+                cmd = new SqlCommand("getAverage", trans.getcon(), trans.GetTransaction());
 
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@DeviceID", DeviceNr));
+                cmd.Parameters.Add(new SqlParameter("@StartDate", selectStart));
+                cmd.Parameters.Add(new SqlParameter("@EndDate", selectEnd));
 
-                cmd.Parameters.Add(new SqlParameter("@TimeOfAccident", Date));
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
+                    Accident A = new Accident(int.Parse((rdr["Amount"]).ToString()));
+                    averageAccidents.Add(A);
+
+                }
+                rdr.Close();
+            }
+            catch (Exception e)
+            {
+
+                //trans.RollBack();
+                throw e;
+                //trans.getcon().Close();
+            }
+            //trans.Commit();
+
+            trans.getcon().Close();
+            return averageAccidents;
+        }
+        public List<Accident> getListByDateFromDB(DateTime Date, int DeviceNr)
+        {
+            List<Accident> dayAccidents = new List<Accident>();
+            DateTime newDate = DateTime.Parse(Date.ToShortDateString());
+            trans = new Transaction();
+            trans.BegindTransactions();
+            try
+            {
+                cmd = new SqlCommand("getInfoFromDate" , trans.getcon(), trans.GetTransaction());
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@Date", newDate));
                 
-                cmd.Parameters.Add(new SqlParameter("@UserID", DeviceNr));
+                cmd.Parameters.Add(new SqlParameter("@DeviceNr", DeviceNr));
 
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.HasRows && rdr.Read())
                 {
                     // Device D = new Device(int.Parse(rdr["DeviceNR"].ToString()), User);
-                    Accident acc = new Accident(DateTime.Parse((rdr["TimeOfAccident"]).ToString()), int.Parse((rdr["Amount"]).ToString()), int.Parse((rdr["Drinks"]).ToString()), DateTime.Parse((rdr["TimeSleep"]).ToString()), int.Parse((rdr["ToiletVisit"]).ToString()));
+                    Accident acc = new Accident(int.Parse((rdr["AccidentID"]).ToString()), int.Parse((rdr["Amount"]).ToString()), DateTime.Parse((rdr["TimeOfAccident"]).ToString()),int.Parse((rdr["DeviceID"]).ToString()), int.Parse((rdr["Drinks"]).ToString()), DateTime.Parse((rdr["TimeSleep"]).ToString()), DateTime.Parse((rdr["TimeToilet"]).ToString()), int.Parse((rdr["Toilet"]).ToString()), int.Parse((rdr["Version"]).ToString()));
                     dayAccidents.Add(acc);
 
                 }
