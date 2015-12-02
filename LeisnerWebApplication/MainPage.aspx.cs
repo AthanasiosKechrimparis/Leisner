@@ -44,6 +44,7 @@ namespace LeisnerWebApplication
                 int userID = cli.getIDFromUsername(txtb_Username.Text);
               //  Session.Add("UserID", userID);
                 Session["UserID"] = userID;
+                Session["username"] = txtb_Username.Text;
                 //Session.Add("Perm", perm);
 
                 if (perm == 1)
