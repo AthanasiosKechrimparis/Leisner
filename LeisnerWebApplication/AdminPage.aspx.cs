@@ -31,7 +31,7 @@ namespace LeisnerWebApplication
 
         protected void btn_Messages_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ReceiveMessages.aspx");
+            Response.Redirect("sendMessage.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
