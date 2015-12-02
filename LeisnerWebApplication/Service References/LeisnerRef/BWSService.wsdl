@@ -97,6 +97,12 @@
   <wsdl:message name="IBWSService_GetMessage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMessageResponse" />
   </wsdl:message>
+  <wsdl:message name="IBWSService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IBWSService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBWSService">
     <wsdl:operation name="ShowGraph">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/ShowGraph" message="tns:IBWSService_ShowGraph_InputMessage" />
@@ -157,6 +163,10 @@
     <wsdl:operation name="GetMessage">
       <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/GetMessage" message="tns:IBWSService_GetMessage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/GetMessageResponse" message="tns:IBWSService_GetMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBWSService/SendMessage" message="tns:IBWSService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBWSService/SendMessageResponse" message="tns:IBWSService_SendMessage_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBWSService" type="tns:IBWSService">
@@ -289,6 +299,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMessage">
       <soap:operation soapAction="http://tempuri.org/IBWSService/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/IBWSService/SendMessage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -11,6 +11,9 @@ namespace BWS_ASP
     [Serializable]
     public class Costumer : IUser
     {
+       
+
+
         [DataMember]
         public int ID { get; set; }
         [DataMember]
@@ -30,6 +33,11 @@ namespace BWS_ASP
                 throw new NotImplementedException();
             }
         }
+
+          public Costumer(string Name)
+          {
+              this.Name = Name;
+          }
 
         public string Statistic(int ID, DateTime startTime, DateTime EndTime)
         {

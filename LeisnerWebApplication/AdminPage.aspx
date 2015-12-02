@@ -27,13 +27,19 @@
         .auto-style6 {
             width: 301px;
         }
+        .auto-style7 {
+            width: 100%;
+        }
+        .auto-style8 {
+            width: 278px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-        <table style="width:100%;">
+        <table class="auto-style7">
             <tr>
                 <td class="auto-style2">
                     <asp:Button ID="btn_ManageAcc" runat="server" OnClick="btn_ManageAcc_Click" Text="Manage Accidents" />
@@ -44,9 +50,11 @@
                 <td class="auto-style2">
                     <asp:Button ID="btn_CreateUser" runat="server" OnClick="btn_CreateUser_Click" Text="Create User" />
                 </td>
-                <td class="auto-style2">
+                <td class="auto-style8">
 
                     <asp:Button ID="btn_Messages" runat="server" Text="Messages" OnClick="btn_Messages_Click" />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
 
                 </td>
             </tr>
@@ -54,7 +62,7 @@
                 <td class="auto-style3"></td>
                 <td class="auto-style1"></td>
                 <td class="auto-style5"></td>
-                <td>
+                <td class="auto-style8">
 
                 </td>
             </tr>
@@ -62,7 +70,7 @@
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style4">&nbsp;</td>
-                <td>
+                <td class="auto-style8">
 
                 </td>
             </tr>

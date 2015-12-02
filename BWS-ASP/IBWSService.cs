@@ -66,6 +66,8 @@ namespace BWS_ASP
 
         [OperationContract]
         List<Message> GetMessage(int UserID);
+        [OperationContract]
+        void SendMessage(string Messagtxt, DateTime senddate, string Tittle, int UserID);
 
         
 

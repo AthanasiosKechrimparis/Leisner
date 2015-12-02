@@ -16,9 +16,11 @@
                     <tr id="Tr1" runat="server" style="background-color: #336699; color: White;">
                         <th id="Th1" runat="server">Name
                         </th>
-                        <th id="Th2" runat="server">Text
+                          <th id="Th2" runat="server">Tittle
+                        </th>
+                        <th id="Th3" runat="server">Text
                         </th>  
-                        <th id="Th3" runat="server">Send Date
+                        <th id="Th4" runat="server">Send Date
                         </th> 
                     </tr>
                     <tr id="itemPlaceholder" runat="server">
@@ -29,6 +31,9 @@
                 <tr style="">  
                     <td>
                         <asp:Label ID="Name" runat="server" Text='<%# Eval("Name") %>' />
+                    </td>
+                       <td>
+                        <asp:Label ID="Tittle" runat="server" Text='<%# Eval("Tittle") %>' />
                     </td>
                     <td>
                         <asp:Label ID="MessageText" runat="server" Text='<%# Eval("MessageText") %>' />

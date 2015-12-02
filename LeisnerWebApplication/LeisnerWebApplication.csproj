@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,6 +71,7 @@
     <None Include="Service References\LeisnerRef\configuration91.svcinfo" />
     <None Include="Service References\LeisnerRef\configuration.svcinfo" />
     <Content Include="ReceiveMessagesPage.aspx" />
+    <Content Include="sendMessage.aspx" />
     <Content Include="Service References\LeisnerRef\LeisnerWebApplication.LeisnerRef.AccidentDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -144,6 +146,13 @@
     </Compile>
     <Compile Include="ReceiveMessagesPage.aspx.designer.cs">
       <DependentUpon>ReceiveMessagesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sendMessage.aspx.cs">
+      <DependentUpon>sendMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sendMessage.aspx.designer.cs">
+      <DependentUpon>sendMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\LeisnerRef\Reference.cs">
       <AutoGen>True</AutoGen>
