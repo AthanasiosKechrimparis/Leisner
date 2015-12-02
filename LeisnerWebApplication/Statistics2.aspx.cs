@@ -33,7 +33,7 @@ namespace LeisnerWebApplication
             
             txtStartDate.Text = Calendar1.SelectedDate.ToShortDateString();
             txtEndDate.Text = Calendar2.SelectedDate.ToShortDateString();
-            Chart1.Visible = false;
+            
             if (!IsPostBack)
             {
                 
@@ -118,6 +118,7 @@ namespace LeisnerWebApplication
             DeviceNr = int.Parse(IDBox.Text);
             selectStart = Calendar1.SelectedDate;
             selectEnd = Calendar2.SelectedDate;
+            Day graphday = new Day();
             
             List<LeisnerRef.Day> dayslist = BWS.GetDayAccidents(selectStart, selectEnd, DeviceNr).ToList();
             List<Day> newdaylist = new List<Day>();
@@ -126,9 +127,11 @@ namespace LeisnerWebApplication
                 Day day = new Day(d.Datek__BackingField, d.AccidentsNumberk__BackingField, d.Averagek__BackingField);
                 newdaylist.Add(day);
             }
-            BWS.ShowGraph(dayslist);
-            
-
+            List<DateTime> xDates = graphday.dateGraphStat2(newdaylist);
+            List<int> ySizes = graphday.avgGraphStat2(newdaylist);
+            Chart1.Enabled = true;
+            Chart1.Series[0].Points.DataBindXY(xDates, ySizes);
+            Chart1.Series[0].Enabled = true;
             
 
             Chart1.Visible = true;
