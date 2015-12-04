@@ -21,7 +21,7 @@ namespace LeisnerWebApplication
         protected void Button1_Click(object sender, EventArgs e)
         {
             //  string subject = TextBox1.Text;
-            int UserID = (int)Session["UserID"];
+            int UserID = (int)Session["UserID1"];
             DateTime date = DateTime.Now;
           //  string nme = Session["usrnme"].ToString();
             string areaTxt = TextArea1.InnerText;

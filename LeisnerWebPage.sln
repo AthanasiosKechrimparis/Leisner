@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeisnerWebApplication", "LeisnerWebApplication\LeisnerWebApplication.csproj", "{379BF524-C4D0-4A7E-8BAE-951C2CAB6AF0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeisnerWebApplication", "Le
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BWS-ASP", "BWS-ASP\BWS-ASP.csproj", "{CBDE772A-3F08-4846-8868-6452B586790C}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProject1", "ModelingProject1\ModelingProject1.modelproj", "{2FADD727-4179-4140-B8F5-C0027C9120D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{CBDE772A-3F08-4846-8868-6452B586790C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBDE772A-3F08-4846-8868-6452B586790C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBDE772A-3F08-4846-8868-6452B586790C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FADD727-4179-4140-B8F5-C0027C9120D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FADD727-4179-4140-B8F5-C0027C9120D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FADD727-4179-4140-B8F5-C0027C9120D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FADD727-4179-4140-B8F5-C0027C9120D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
