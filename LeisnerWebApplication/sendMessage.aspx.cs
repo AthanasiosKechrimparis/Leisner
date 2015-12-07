@@ -14,7 +14,7 @@ namespace LeisnerWebApplication
         BWSServiceClient bedW = new BWSServiceClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-           Label1.Text = Session["username"].ToString();
+           //Label1.Text = Session["username"].ToString();
     
         }
 

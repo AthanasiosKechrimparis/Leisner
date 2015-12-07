@@ -14,13 +14,13 @@ namespace LeisnerWebApplication
     {
         LeisnerRef.BWSServiceClient service = new BWSServiceClient();
 
-        string AmountStr;
+        int AmountStr;
         int AmountR;
-        string DateSleepStr;
-        string SleepDateStr;
-        string toiletDateStr;
+        DateTime DateSleepStr;
+        DateTime SleepDateStr;
+        DateTime toiletDateStr;
         int toiletVisit;
-        string ToiletVisitStr;
+        int ToiletVisitStr;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,22 +40,22 @@ namespace LeisnerWebApplication
             if (rdlAmount.SelectedIndex == 0)
             {
                 AmountR = 1;
-                AmountStr = AmountR.ToString();
+                AmountStr = int.Parse(AmountR.ToString());
             }
             else if (rdlAmount.SelectedIndex == 1)
             {
                 AmountR = 2;
-                AmountStr = AmountR.ToString();
+                AmountStr = int.Parse(AmountR.ToString());
             }
             else if (rdlAmount.SelectedIndex == 2)
             {
                 AmountR = 3;
-                AmountStr = AmountR.ToString();
+                AmountStr = int.Parse(AmountR.ToString());
             }
             else if (rdlAmount.SelectedIndex == 3)
             {
                 AmountR = 0;
-                AmountStr = AmountR.ToString();
+                AmountStr = int.Parse(AmountR.ToString());
             }
 
 
@@ -72,54 +72,54 @@ namespace LeisnerWebApplication
             if (rdbListDate.SelectedIndex == 0)
             {
                 date = DateTime.Now;
-                DateSleepStr = date.ToString();
+                DateSleepStr = DateTime.Parse(date.ToString());
 
                 string NowDateSleep = date.ToString("dd-MM-yyyy") + " " + txttimeSleep.Text + ":" + txtminutesleep.Text;
                 sleepDate = DateTime.ParseExact(NowDateSleep, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
-                SleepDateStr = sleepDate.ToString();
+                SleepDateStr = DateTime.Parse(sleepDate.ToString());
 
                 string HourToilet = date.ToString("dd-MM-yyyy") + " " + txthoursToilet.Text + ":" + txtminutesToilet.Text;
                 toiletDate = DateTime.ParseExact(HourToilet, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
-                toiletDateStr = toiletDate.ToString();
+                toiletDateStr = DateTime.Parse(toiletDate.ToString());
             }
             if (rdbListDate.SelectedIndex == 1)
             {
                 date = DateTime.ParseExact(CustomDate, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
-                DateSleepStr = date.ToString();
+                DateSleepStr = DateTime.Parse(date.ToString());
 
                 sleepDate = DateTime.ParseExact(SleepDate, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
-                SleepDateStr = sleepDate.ToString();
+                SleepDateStr = DateTime.Parse(sleepDate.ToString());
 
                 toiletDate = DateTime.ParseExact(ToiletDate, "dd-MM-yyyy H:m", CultureInfo.InvariantCulture);
-                toiletDateStr = toiletDate.ToString();
+                toiletDateStr = DateTime.Parse(toiletDate.ToString());
             }
 
 
             int Drink = int.Parse(txtdrink.Text);
-            string DrinkStr = Drink.ToString();
+            int DrinkStr = int.Parse(Drink.ToString());
 
             if (rdToiletVisit.SelectedIndex == 0)
             {
                 toiletVisit = 0;
-                ToiletVisitStr = toiletVisit.ToString();
+                ToiletVisitStr = int.Parse(toiletVisit.ToString());
             }
             else if (rdToiletVisit.SelectedIndex == 1)
             {
                 toiletVisit = 1;
-                ToiletVisitStr = toiletVisit.ToString();
+                ToiletVisitStr = int.Parse(toiletVisit.ToString());
             }
             else if (rdToiletVisit.SelectedIndex == 2)
             {
                 toiletVisit = 2;
-                ToiletVisitStr = toiletVisit.ToString();
+                ToiletVisitStr = int.Parse(toiletVisit.ToString());
             }
             else if (rdToiletVisit.SelectedIndex == 3)
             {
                 toiletVisit = 3;
-                ToiletVisitStr = toiletVisit.ToString();
+                ToiletVisitStr = int.Parse(toiletVisit.ToString());
             }
 
-            service.RegisterAccident(DeviceID, AmountR, date, Drink, sleepDate, toiletDate, toiletVisit);
+            //service.RegisterAccident(DeviceID, AmountR, date, Drink, sleepDate, toiletDate, toiletVisit);
 
             Session["Device"] = Device;
             Session["Amount"] = AmountStr;

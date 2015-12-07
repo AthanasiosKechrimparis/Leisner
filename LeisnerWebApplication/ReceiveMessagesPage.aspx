@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <h1>Message Show</h1>
       <div>
-            <asp:ListView ID="ListView2" DataKeyNames="MessageText" runat="server" OnSelectedIndexChanged="ListView2_SelectedIndexChanged">
+            <asp:ListView ID="ListView2" DataKeyNames="MessageText" runat="server" >
                     <LayoutTemplate>
                 <table id="tbShowMessage" runat="server" border="1" style="">
                     <tr id="Tr1" runat="server" style="background-color: #336699; color: White;">
