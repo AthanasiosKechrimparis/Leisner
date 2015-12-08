@@ -36,12 +36,10 @@ namespace BWS_ASP
 
         public Message(string MessageText, DateTime SendDate, string Tittle, Costumer User)
         {
-            // TODO: Complete member initialization
             this.MessageText = MessageText;
             this.SendDate = SendDate;
             this.Tittle = Tittle;
             this.User = User;
-            //this.User = User;
         }
 
         public List<Message> GetMessage(int UserID)
@@ -62,11 +60,12 @@ namespace BWS_ASP
                 while (rdr.HasRows && rdr.Read())
                 {
                     messageList = new List<Message>();
-                    Message A = new Message(rdr["Message"].ToString(), DateTime.Parse(rdr["sendDate"].ToString()), rdr["Tittle"].ToString(), new Costumer(rdr["Name"].ToString()));
-                    //A.MessageText = rdr["Message"].ToString();
-                    //A.SendDate = DateTime.Parse(rdr["sendDate"].ToString());
-                    //A.Tittle = rdr["Tittle"].ToString();
-                    //A.User.Name = rdr["Name"].ToString();
+                    Message A = new Message(
+                                rdr["Message"].ToString(),
+                                DateTime.Parse(rdr["sendDate"].ToString()),
+                                rdr["Tittle"].ToString(),
+                                new Costumer(rdr["Name"].ToString()));
+                  
 
                     messageList.Add(A);
                    
@@ -78,8 +77,6 @@ namespace BWS_ASP
                 throw e;
 
             }
-
-            //trans.Commit();
             trans.getcon().Close();
             return messageList;
 
@@ -94,7 +91,6 @@ namespace BWS_ASP
             trans = new Transaction();
 
             trans.BegindTransactions();
-            //int i = 101;
             try
             {
                 cmd = new SqlCommand("SendMessage", trans.getcon(), trans.GetTransaction());
@@ -106,8 +102,6 @@ namespace BWS_ASP
                 cmd.Parameters.Add(new SqlParameter("@Tittle", Tittle));
                 cmd.Parameters.Add(new SqlParameter("@UserID", UserID));
 
-                //cmd.Parameters.Add(new SqlParameter("@Version", (Version + 1)));
-
                 cmd.ExecuteNonQuery();
                 trans.Commit();
 
@@ -118,7 +112,6 @@ namespace BWS_ASP
                 throw e;
 
             }
-            //trans.Commit();
 
         }
     }

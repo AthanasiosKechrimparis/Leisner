@@ -16,7 +16,7 @@
                     <tr id="Tr1" runat="server" style="background-color: #336699; color: White;">
                         <th id="Th1" runat="server">Name
                         </th>
-                          <th id="Th2" runat="server">Tittle
+                          <th id="Th2" runat="server">Title
                         </th>
                         <th id="Th3" runat="server">Text
                         </th>  
@@ -30,10 +30,10 @@
             <ItemTemplate>
                 <tr style="">  
                     <td>
-                        <asp:Label ID="Name" runat="server" Text='<%# Eval("Name") %>' />
+                        <asp:Label ID="Name" runat="server" Text='<%# ("User") %>'/>
                     </td>
                        <td>
-                        <asp:Label ID="Tittle" runat="server" Text='<%# Eval("Tittle") %>' />
+                        <asp:Label ID="Title" runat="server" Text='<%# Eval("Tittle") %>' />
                     </td>
                     <td>
                         <asp:Label ID="MessageText" runat="server" Text='<%# Eval("MessageText") %>' />
@@ -59,7 +59,8 @@
             <asp:Button ID="btnShow" runat="server" Text="Show Messages" OnClick="btnShow_Click" />
         </div>
         <div>
-            <asp:DropDownList ID="ddList" runat="server" DataSourceID="SqlDataSource1" DataTextField="UserName" DataValueField="UserName"></asp:DropDownList>
+            <asp:DropDownList ID="ddList" runat="server" DataSourceID="LeisnerTable" DataTextField="UserID" DataValueField="UserID"></asp:DropDownList>
+            <asp:SqlDataSource ID="LeisnerTable" runat="server" ConnectionString="<%$ ConnectionStrings:mitoden_dbgr15ConnectionString %>" SelectCommand="SELECT [UserID] FROM [User]"></asp:SqlDataSource>
         </div>
     </form>
 </body>
