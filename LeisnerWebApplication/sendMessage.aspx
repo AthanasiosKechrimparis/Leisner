@@ -12,7 +12,8 @@
     
         <h1>Send Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
         <p>
-            welcome:
+            Welcome:
+            User
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
@@ -32,7 +33,7 @@
         </div>
         <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="send" />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Send" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Back" />
             &nbsp;</div>

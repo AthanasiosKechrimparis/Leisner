@@ -5,12 +5,17 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using LeisnerWebApplication.LeisnerRef;
 
-namespace BWS_ASP
+namespace LeisnerWebApplication
 {
+    
     [Serializable]
-    public class Costumer : IUser
+    public class Costumer
     {
+       
+
+
         [DataMember]
         public int ID { get; set; }
         [DataMember]

@@ -30,7 +30,7 @@
             <ItemTemplate>
                 <tr style="">  
                     <td>
-                        <asp:Label ID="Name" runat="server" Text='<%# ("User") %>'/>
+                        <asp:Label ID="Name" runat="server" Text='<%# Eval ("User") %>'/>
                     </td>
                        <td>
                         <asp:Label ID="Title" runat="server" Text='<%# Eval("Tittle") %>' />
@@ -57,6 +57,8 @@
         </div>
         <div>
             <asp:Button ID="btnShow" runat="server" Text="Show Messages" OnClick="btnShow_Click" />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Choose User ID"></asp:Label>
         </div>
         <div>
             <asp:DropDownList ID="ddList" runat="server" DataSourceID="LeisnerTable" DataTextField="UserID" DataValueField="UserID"></asp:DropDownList>

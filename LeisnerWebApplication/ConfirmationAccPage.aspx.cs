@@ -42,5 +42,10 @@ namespace LeisnerWebApplication
             service.RegisterAccident(Device, Amount, TimeAcc, Drinks, TimeSleep, TimeToilet, ToiletVisit);
             Response.Redirect("InsertAccidentPage.aspx");
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InsertAccidentPage.aspx");
+        }
     }
 }

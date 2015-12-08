@@ -110,6 +110,7 @@
     <Compile Include="ConfirmationAccPage.aspx.designer.cs">
       <DependentUpon>ConfirmationAccPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Costumer.cs" />
     <Compile Include="CreateUserPage.aspx.cs">
       <DependentUpon>CreateUserPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

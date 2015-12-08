@@ -53,7 +53,8 @@
         
     </div>
         <div>
-            <asp:Button ID="btnSave" runat="server" Text="Save" Font-Bold="True" Font-Italic="True" OnClick="btnSave_Click" />
+            <asp:Button ID="btnSave" runat="server" Text="Confirm and Save" Font-Bold="True" Font-Italic="True" OnClick="btnSave_Click" CssClass="inlineBlock"/>
+            <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" style="font-weight: 700" />
         </div>
     </form>
 </body>
