@@ -35,7 +35,7 @@ namespace LeisnerWebApplication
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             int DeviceID = int.Parse(txtDevice.Text);
-            string Device = DeviceID.ToString();
+            int Device = int.Parse(DeviceID.ToString());
 
             if (rdlAmount.SelectedIndex == 0)
             {
